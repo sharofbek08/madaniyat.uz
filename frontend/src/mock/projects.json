@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Madaniyat karvoni",
+    "desc": "Chekka hududlardagi qishloq va ovullarga taniqli san'atkorlar va teatr jamoalarining gastrolyor safari",
+    "status": "Faol",
+    "participants": "1 200 000+ tomoshabin",
+    "badge": "Respublika loyihasi"
+  },
+  {
+    "id": 2,
+    "title": "O‘zbekiston madaniyati kunlari",
+    "desc": "Fransiya, Germaniya, Yaponiya, AQSH va MDH mamlakatlarida milliy san'atimiz ko‘rgazmalari",
+    "status": "Xalqaro",
+    "participants": "30+ davlat",
+    "badge": "Xalqaro diplomatiya"
+  },
+  {
+    "id": 3,
+    "title": "Raqamli muzey merosi",
+    "desc": "Respublika muzeylaridagi barcha nodir asarlar va qo‘lyozmalarni 3D formatda raqamlashtirish",
+    "status": "Raqamlashtirish",
+    "participants": "50 000+ eksponat",
+    "badge": "Innovatsiya"
+  },
+  {
+    "id": 4,
+    "title": "Zamonaviy madaniyat markazlari",
+    "desc": "Barcha tumanlarda madaniyat maskanlarini zamonaviy ovoz, yorug‘lik va kino jihozlari bilan ta'minlash",
+    "status": "Qurilish va ta'mirlash",
+    "participants": "150+ bino",
+    "badge": "Infratuzilma"
+  }
+]

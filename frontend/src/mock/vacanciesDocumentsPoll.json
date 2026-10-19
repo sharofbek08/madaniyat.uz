@@ -1,0 +1,91 @@
+{
+  "vacancies": [
+    {
+      "id": 1,
+      "title": "Teatr va tomosha san'ati boshqarmasi bosh mutaxassisi",
+      "department": "Markaziy apparat",
+      "salary": "6 500 000 – 8 000 000 so‘m",
+      "deadline": "2026-11-15",
+      "location": "Toshkent shahri",
+      "url": "https://vacancy.argos.uz"
+    },
+    {
+      "id": 2,
+      "title": "Axborot xizmati yetakchi mutaxassisi (Matbuot kotibi)",
+      "department": "Jamoatchilik bilan aloqalar",
+      "salary": "5 800 000 – 7 200 000 so‘m",
+      "deadline": "2026-11-10",
+      "location": "Toshkent shahri",
+      "url": "https://vacancy.argos.uz"
+    },
+    {
+      "id": 3,
+      "title": "Xalqaro aloqalar va protokol bo‘limi bosh mutaxassisi",
+      "department": "Xalqaro hamkorlik",
+      "salary": "6 200 000 – 7 800 000 so‘m",
+      "deadline": "2026-11-18",
+      "location": "Toshkent shahri",
+      "url": "https://vacancy.argos.uz"
+    }
+  ],
+  "documents": [
+    {
+      "id": 1,
+      "number": "PF-6000-son",
+      "type": "Prezident Farmoni",
+      "date": "2020-05-26",
+      "title": "Madaniyat va san'at sohasining jamiyat hayotidagi o‘rni va ta'sirini yanada oshirish chora-tadbirlari to‘g‘risida",
+      "url": "https://lex.uz"
+    },
+    {
+      "id": 2,
+      "number": "PQ-408-son",
+      "type": "Prezident Qarori",
+      "date": "2023-12-25",
+      "title": "Madaniyat markazlari faoliyatini yanada rivojlantirish va aholining madaniy dam olishini tashkil etish to‘g‘risida",
+      "url": "https://lex.uz"
+    },
+    {
+      "id": 3,
+      "number": "VMQ-332-son",
+      "type": "Vazirlar Mahkamasi Qarori",
+      "date": "2024-06-12",
+      "title": "Moddiy madaniy meros ob'yektlarini muhofaza qilish va ulardan oqilona foydalanish tartibi to‘g‘risida",
+      "url": "https://lex.uz"
+    },
+    {
+      "id": 4,
+      "number": "Buyruq № 142",
+      "type": "Vazirlik buyrug‘i",
+      "date": "2026-09-01",
+      "title": "2026/2027 o‘quv yilida musiqa va san'at maktablarida o‘quv jarayonini tashkil etish to‘g‘risida",
+      "url": "#"
+    }
+  ],
+  "poll": {
+    "is_voting": true,
+    "all_voting": 128,
+    "id": 21,
+    "title": "Yagona interaktiv davlat xizmatlari portali (my.gov.uz)dan foydalanasizmi?",
+    "answers": [
+      {
+        "id": 45,
+        "title": "Yo'q, hali umuman bu portaldan foydalanmaganman",
+        "count": "34",
+        "voted": false
+      },
+      {
+        "id": 44,
+        "title": "Ha, bolamni bog'chaga joylashtirish uchun foydalanganman",
+        "count": "5",
+        "voted": false
+      },
+      {
+        "id": 43,
+        "title": "Ha, bu portal hayotimda muhim o'rin tutadi",
+        "count": "62",
+        "voted": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "value": 40,
+    "suffix": "+",
+    "label": "Davlat teatrlari",
+    "sub": "respublika va viloyat teatrlari"
+  },
+  {
+    "id": 2,
+    "value": 825,
+    "suffix": "",
+    "label": "Madaniyat markazlari",
+    "sub": "barcha shahar va tumanlarda"
+  },
+  {
+    "id": 3,
+    "value": 110,
+    "suffix": "+",
+    "label": "Muzeylar va galereyalar",
+    "sub": "noyob eksponatlar xazinasi"
+  },
+  {
+    "id": 4,
+    "value": 330,
+    "suffix": "",
+    "label": "Musiqa va san'at maktablari",
+    "sub": "yosh iste'dodlar maskani"
+  },
+  {
+    "id": 5,
+    "value": 15000,
+    "suffix": "+",
+    "label": "Yillik madaniy tadbirlar",
+    "sub": "kontsertlar, festivallar, ko‘rgazmalar"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "id": 140,
+    "category_id": 4,
+    "title": "Yagona interaktiv davlat xizmatlari portali",
+    "target": "_blank",
+    "url": "https://my.gov.uz/oz",
+    "icon": "https://api-portal.gov.uz/uploads/19/2023/09/13/5edcdce3-8a43-da04-6c9d-34b9e3b4abe7_menu-links_.png"
+  },
+  {
+    "id": 143,
+    "category_id": 4,
+    "title": "Ochiq maʼlumotlar",
+    "target": "_blank",
+    "url": "https://data.egov.uz",
+    "icon": "https://api-portal.gov.uz/uploads/19/2023/09/13/d1d9fbaf-6b8d-8be5-4330-c031351eb4bb_menu-links_366.jpg"
+  },
+  {
+    "id": 141,
+    "category_id": 4,
+    "title": "Ochiq budjet",
+    "target": "_blank",
+    "url": "https://openbudget.uz/",
+    "icon": "https://api-portal.gov.uz/uploads/19/2023/09/13/1b7de467-b67e-04ef-cae9-25705e23c61c_menu-links_.png"
+  },
+  {
+    "id": 528,
+    "category_id": 4,
+    "title": "Aholini favqulodda vaziyatlarda to'g'ri harakat qilishga o'rgatuvchi foydali havolalar",
+    "target": "_blank",
+    "url": "https://gov.uz/fvv/sections/aholini-favqulodda-vaziyatlarda-togri-harakat-qilishga-orgatuvchi-foydali-havolalar/",
+    "icon": "https://api-portal.gov.uz/uploads/19/2024/05/23/194b3767-56e0-4099-9e2b-6ad222c26154_widgets_.png"
+  },
+  {
+    "id": 146,
+    "category_id": 4,
+    "title": "Xususiylashtirish",
+    "target": "_blank",
+    "url": "https://davaktiv.uz/oz/",
+    "icon": "https://api-portal.gov.uz/uploads/19/2023/09/13/5578c4f0-e250-16fd-abf5-b0b3bd651cc4_menu-links_.jpg"
+  },
+  {
+    "id": 142,
+    "category_id": 4,
+    "title": "Gender statistikasi",
+    "target": "_blank",
+    "url": "https://gender.stat.uz/uz",
+    "icon": "https://api-portal.gov.uz/uploads/19/2023/09/13/983ce210-3dba-3658-6a13-90eecb927ff2_menu-links_.png"
+  },
+  {
+    "id": 145,
+    "category_id": 4,
+    "title": "Korrupsiyaga qarshi kurashish",
+    "target": "_blank",
+    "url": "https://anticorruption.uz/uz",
+    "icon": "https://api-portal.gov.uz/uploads/19/2023/09/13/b5d8dca9-5d99-20dc-ad9e-effb744db0b9_menu-links_.png"
+  },
+  {
+    "id": 144,
+    "category_id": 4,
+    "title": "Huquqiy axborot portali",
+    "target": "_blank",
+    "url": "https://advice.uz/oz",
+    "icon": "https://api-portal.gov.uz/uploads/19/2023/09/13/fe89fc69-4aba-bfb1-454c-81f41b5fea5e_menu-links_.jpg"
+  }
+]

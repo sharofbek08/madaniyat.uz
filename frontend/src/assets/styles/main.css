@@ -1,0 +1,290 @@
+/* ==========================================================================
+   O'zbekiston Respublikasi Madaniyat vazirligi - Rasmiy Vebsayti Dizayn Tizimi
+   ========================================================================== */
+
+:root {
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  /* Color Palette - Uzbek Government Brand Navy & Gold */
+  --color-primary: #013d8c;
+  --color-primary-dark: #002860;
+  --color-primary-light: #0d5bbd;
+  --color-primary-50: #eef5fc;
+  --color-primary-100: #d8e8f8;
+  --color-primary-200: #b5d5f2;
+
+  --color-accent: #c5a059;
+  --color-accent-light: #f5eedb;
+  --color-accent-dark: #9e7931;
+
+  --color-success: #15803d;
+  --color-success-bg: #dcfce7;
+  --color-danger: #b91c1c;
+  --color-danger-bg: #fee2e2;
+
+  --color-gray-50: #f8fafc;
+  --color-gray-100: #f1f5f9;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e1;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-800: #1e293b;
+  --color-gray-900: #0f172a;
+
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+
+  --container-max: 1320px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.35s ease;
+
+  /* Dynamic accessibility values */
+  --font-scale: 1;
+}
+
+/* Grayscale Mode */
+body.accessibility-grayscale {
+  filter: grayscale(100%) !important;
+}
+
+/* High Contrast Mode */
+body.accessibility-contrast {
+  --bg-page: #000000 !important;
+  --bg-card: #121212 !important;
+  --text-main: #ffff00 !important;
+  --text-muted: #ffffff !important;
+  --color-primary: #ffff00 !important;
+  --color-primary-dark: #ffff55 !important;
+  --border-color: #ffff00 !important;
+  color: #ffff00 !important;
+  background-color: #000000 !important;
+}
+
+body.accessibility-contrast * {
+  border-color: #ffff00 !important;
+}
+
+/* Reset and Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: calc(15px * var(--font-scale));
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-main);
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-title::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 28px;
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
+  border-radius: 4px;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.section-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.see-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-50);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  transition: var(--transition-fast);
+}
+
+.see-all-btn:hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateX(4px);
+}
+
+/* Layout Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary {
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+}
+
+.badge-accent {
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+}
+
+.badge-success {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+/* Section Wrapper */
+.home-section {
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+.home-section-alt {
+  background: #ffffff;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Uzbek Geometric Pattern Overlay (Subtle) */
+.pattern-bg {
+  background-image: radial-gradient(rgba(1, 61, 140, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.08); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .home-section {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}

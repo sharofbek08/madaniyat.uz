@@ -1,0 +1,42 @@
+[
+  {
+    "id": 487,
+    "title": "O’ZBEKISTON RESPUBLIKASI PREZIDENTI MATBUOT XIZMATI",
+    "target": "_blank",
+    "url": "https://www.president.uz/",
+    "icon": "https://api-portal.gov.uz/uploads/77200eb7-47ca-e586-f031-19d1a952f3f0_menu-links_487.png",
+    "children": []
+  },
+  {
+    "id": 488,
+    "title": "O’ZBEKISTON RESPUBLIKASI OLIY MAJLISI QONUNCHILIK PALATASI",
+    "target": "_blank",
+    "url": "http://parliament.gov.uz/",
+    "icon": "https://api-portal.gov.uz/uploads/4a48446c-5efe-f909-3ed2-bcba3a7acb8e_menu-links_488.png",
+    "children": []
+  },
+  {
+    "id": 489,
+    "title": "O'ZBEKISTON RESPUBLIKASI OLIY MAJLISINING SENATI",
+    "target": "_blank",
+    "url": "http://senat.gov.uz/",
+    "icon": "https://api-portal.gov.uz/uploads/ee4759c4-bb62-fb92-7233-087a5bf20e43_menu-links_489.png",
+    "children": []
+  },
+  {
+    "id": 490,
+    "title": "O’ZBEKISTON RESPUBLIKASI HUKUMATI PORTALI",
+    "target": "_blank",
+    "url": "https://www.gov.uz/",
+    "icon": "https://api-portal.gov.uz/uploads/c8119642-56f9-2837-dad1-d67dbb83c493_menu-links_490.png",
+    "children": []
+  },
+  {
+    "id": 491,
+    "title": "MILLIY HUQUQIY INTERNET PORTALI",
+    "target": "_blank",
+    "url": "http://huquqiyportal.uz/",
+    "icon": "https://api-portal.gov.uz/uploads/1b038be1-2a2b-3496-b739-dd127b65119f_menu-links_491.png",
+    "children": []
+  }
+]

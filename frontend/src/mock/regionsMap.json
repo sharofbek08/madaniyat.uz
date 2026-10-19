@@ -1,0 +1,156 @@
+[
+  {
+    "id": "tashkent_city",
+    "name": "Toshkent shahri",
+    "leader": "Rahmonov Dilmurod Ikromovich",
+    "address": "Toshkent sh., Chilonzor tumani, Bunyodkor shoh ko‘chasi, 2-uy",
+    "phone": "+99871 277-12-34",
+    "email": "toshkent@madaniyat.uz",
+    "centers": 24,
+    "theaters": 18,
+    "museums": 38
+  },
+  {
+    "id": "tashkent_region",
+    "name": "Toshkent viloyati",
+    "leader": "Ismoilov Shavkat Sobirovich",
+    "address": "Nurafshon sh., Toshkent yo‘li ko‘chasi, 15-uy",
+    "phone": "+99870 762-34-56",
+    "email": "toshvil@madaniyat.uz",
+    "centers": 82,
+    "theaters": 2,
+    "museums": 7
+  },
+  {
+    "id": "samarkand",
+    "name": "Samarqand viloyati",
+    "leader": "Mirzayev Rustam Hakimoivch",
+    "address": "Samarqand sh., Registon ko‘chasi, 45-uy",
+    "phone": "+99866 233-45-67",
+    "email": "samarqand@madaniyat.uz",
+    "centers": 78,
+    "theaters": 3,
+    "museums": 14
+  },
+  {
+    "id": "bukhara",
+    "name": "Buxoro viloyati",
+    "leader": "Zokirov Bahodir Qodirovich",
+    "address": "Buxoro sh., Ibrohim Mo‘minov ko‘chasi, 7-uy",
+    "phone": "+99865 224-56-78",
+    "email": "buxoro@madaniyat.uz",
+    "centers": 64,
+    "theaters": 2,
+    "museums": 12
+  },
+  {
+    "id": "fergana",
+    "name": "Farg‘ona viloyati",
+    "leader": "Olimov Akbarjon Yoqubovich",
+    "address": "Farg‘ona sh., Al-Farg‘oniy ko‘chasi, 28-uy",
+    "phone": "+99873 244-67-89",
+    "email": "fargona@madaniyat.uz",
+    "centers": 94,
+    "theaters": 3,
+    "museums": 6
+  },
+  {
+    "id": "andijan",
+    "name": "Andijon viloyati",
+    "leader": "Qosimov Bobir Mahmudovich",
+    "address": "Andijon sh., Amir Umarxon ko‘chasi, 5-uy",
+    "phone": "+99874 223-78-90",
+    "email": "andijon@madaniyat.uz",
+    "centers": 71,
+    "theaters": 2,
+    "museums": 5
+  },
+  {
+    "id": "namangan",
+    "name": "Namangan viloyati",
+    "leader": "Xolmatov Sanjarbek Ravshanovich",
+    "address": "Namangan sh., Bobur shoh ko‘chasi, 19-uy",
+    "phone": "+99869 227-89-01",
+    "email": "namangan@madaniyat.uz",
+    "centers": 68,
+    "theaters": 2,
+    "museums": 4
+  },
+  {
+    "id": "kashkadarya",
+    "name": "Qashqadaryo viloyati",
+    "leader": "Nazarov Otabek Tohirovich",
+    "address": "Qarshi sh., Mustaqillik shoh ko‘chasi, 32-uy",
+    "phone": "+99875 221-12-45",
+    "email": "qashqadaryo@madaniyat.uz",
+    "centers": 86,
+    "theaters": 2,
+    "museums": 5
+  },
+  {
+    "id": "surkhandarya",
+    "name": "Surxondaryo viloyati",
+    "leader": "Karimov Elyor Shavkatovich",
+    "address": "Termiz sh., At-Termiziy ko‘chasi, 11-uy",
+    "phone": "+99876 223-34-56",
+    "email": "surxondaryo@madaniyat.uz",
+    "centers": 62,
+    "theaters": 1,
+    "museums": 4
+  },
+  {
+    "id": "khorezm",
+    "name": "Xorazm viloyati",
+    "leader": "Jumaniyazov Umidbek Komilovich",
+    "address": "Urganch sh., Al-Xorazmiy ko‘chasi, 24-uy",
+    "phone": "+99862 226-56-78",
+    "email": "xorazm@madaniyat.uz",
+    "centers": 58,
+    "theaters": 2,
+    "museums": 7
+  },
+  {
+    "id": "navoiy",
+    "name": "Navoiy viloyati",
+    "leader": "Ergashev Mansur Qobilovich",
+    "address": "Navoiy sh., Xalqlar do‘stligi shoh ko‘chasi, 77-uy",
+    "phone": "+99879 223-67-89",
+    "email": "navoiy@madaniyat.uz",
+    "centers": 46,
+    "theaters": 1,
+    "museums": 3
+  },
+  {
+    "id": "jizzakh",
+    "name": "Jizzax viloyati",
+    "leader": "Sultonov Jamshid Rustamovich",
+    "address": "Jizzax sh., Sh. Rashidov shoh ko‘chasi, 60-uy",
+    "phone": "+99872 226-78-90",
+    "email": "jizzax@madaniyat.uz",
+    "centers": 52,
+    "theaters": 1,
+    "museums": 3
+  },
+  {
+    "id": "sirdaryo",
+    "name": "Sirdaryo viloyati",
+    "leader": "Abdullayev Nodirjon Qodirovich",
+    "address": "Guliston sh., O‘zbekiston ko‘chasi, 54-uy",
+    "phone": "+99867 225-89-01",
+    "email": "sirdaryo@madaniyat.uz",
+    "centers": 42,
+    "theaters": 1,
+    "museums": 2
+  },
+  {
+    "id": "karakalpakstan",
+    "name": "Qoraqalpog‘iston Respublikasi",
+    "leader": "Berdimuratov Qallibek Oralbayevich",
+    "address": "Nukus sh., Berdaq shoh ko‘chasi, 41-uy",
+    "phone": "+99861 222-90-12",
+    "email": "qr@madaniyat.uz",
+    "centers": 72,
+    "theaters": 3,
+    "museums": 8
+  }
+]

@@ -1,0 +1,521 @@
+[
+  {
+    "id": 1122,
+    "title": "Vazirlik haqida",
+    "target": "_self",
+    "url": "#",
+    "icon": "",
+    "children": [
+      {
+        "id": 1957,
+        "parent_id": 1122,
+        "title": "Vazirlik haqida",
+        "url": "madaniyat/pages/about",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1958,
+        "parent_id": 1122,
+        "title": "Tashkilot tuzilmasi",
+        "url": "madaniyat/pages/structure",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1962,
+        "parent_id": 1122,
+        "title": "Rahbariyat",
+        "url": "madaniyat/guides",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1959,
+        "parent_id": 1122,
+        "title": "Markaziy apparat",
+        "url": "madaniyat/departments/staff",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1961,
+        "parent_id": 1122,
+        "title": "Tizimdagi tashkilotlar",
+        "url": "madaniyat/departments/subordinate",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1960,
+        "parent_id": 1122,
+        "title": "Hududiy boshqarmalar",
+        "url": "madaniyat/departments/regional",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2921,
+        "parent_id": 1122,
+        "title": "Bo‘sh ish o‘rinlari",
+        "url": "madaniyat/pages/bo-sh-ish-o-rinlari",
+        "target": "_top",
+        "icon": ""
+      }
+    ]
+  },
+  {
+    "id": 1123,
+    "title": "Faoliyat",
+    "target": "_self",
+    "url": "#",
+    "icon": "",
+    "children": [
+      {
+        "id": 17063,
+        "parent_id": 1123,
+        "title": "Tanlovlar va tenderlar",
+        "url": "madaniyat/news/e-lon",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 13460,
+        "parent_id": 1123,
+        "title": "Ekofaol xodim",
+        "url": "madaniyat/news/test",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 3825,
+        "parent_id": 1123,
+        "title": "Konstitutsiya sahifasi",
+        "url": "madaniyat/sections/konstitutsiya-sahifasi",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 3433,
+        "parent_id": 1123,
+        "title": "Korrupsiyaga qarshi kurashish",
+        "url": "madaniyat/sections/korrup-bo-lim",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2971,
+        "parent_id": 1123,
+        "title": "Majlislar",
+        "url": "madaniyat/activity_page/majlislar",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2966,
+        "parent_id": 1123,
+        "title": "Hisobotlar",
+        "url": "madaniyat/activity_page/hisobotlar",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2927,
+        "parent_id": 1123,
+        "title": "Tadbirlar",
+        "url": "madaniyat/activity_page/tadbirlar",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2926,
+        "parent_id": 1123,
+        "title": "Rahbarlar faoliyati",
+        "url": "madaniyat/activity_page/rahbarlar-faoliyati",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 14553,
+        "parent_id": 1123,
+        "title": "Madaniyat vazirligiga ishga kirish jarayonidagi namunaviy savollar to‘plami",
+        "url": "madaniyat/pages/madaniyat-vazirligiga-ishga-kirish-jarayonidagi-namunaviy-savollar-to-plami",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 23920,
+        "parent_id": 1123,
+        "title": "Xavflarni boshqarish",
+        "url": "madaniyat/sections/xavflarni-boshqarish",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 13214,
+        "parent_id": 1123,
+        "title": "Ichki audit bo'limi",
+        "url": "madaniyat/sections/ichki-audit-bo-limi",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2992,
+        "parent_id": 1123,
+        "title": "Vazirlik faoliyatiga oid asosiy ko‘rsatgichlar va statistik maʼlumotlar",
+        "url": "madaniyat/activity_page/vazirlik-faoliyatiga-oid-asosiy-ko-rsatgichlar-va-statistik-malumotlar",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 14702,
+        "parent_id": 1123,
+        "title": "Statistika",
+        "url": "madaniyat/sections/statistika",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1964,
+        "parent_id": 1123,
+        "title": "Elektron hukumat",
+        "url": "madaniyat/activity_page/elektron-hukumat",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1963,
+        "parent_id": 1123,
+        "title": "Xalqaro hamkorlik",
+        "url": "madaniyat/activity_page/cooperation",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1966,
+        "parent_id": 1123,
+        "title": "Yoshlar siyosati",
+        "url": "madaniyat/activity_page/youth_policy",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1967,
+        "parent_id": 1123,
+        "title": "Gender tenglik",
+        "url": "madaniyat/activity_page/gender_equality",
+        "target": "_top",
+        "icon": ""
+      }
+    ]
+  },
+  {
+    "id": 1124,
+    "title": "Davlat xizmatlari",
+    "target": "_self",
+    "url": "#",
+    "icon": "",
+    "children": [
+      {
+        "id": 8597,
+        "parent_id": 1124,
+        "title": "Axborot tizimlari",
+        "url": "madaniyat/pages/axborot-tizimlari",
+        "target": "_top",
+        "icon": ""
+      }
+    ]
+  },
+  {
+    "id": 1125,
+    "title": "Hujjatlar",
+    "target": "_self",
+    "url": "#",
+    "icon": "",
+    "children": [
+      {
+        "id": 8146,
+        "parent_id": 1125,
+        "title": "Normativ huquqiy hujjatlar loyihalari",
+        "url": "madaniyat/pages/normativ-huquqiy-hujjatlar-loyihalari",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 3852,
+        "parent_id": 1125,
+        "title": "O‘z kuchini yo‘qotgan hujjatlar",
+        "url": "madaniyat/sections/o-z-kuchini-yo-qotgan-hujjatlar",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2975,
+        "parent_id": 1125,
+        "title": "Sohaga oid hujjatlar",
+        "url": "madaniyat/sections/sohaga-oid-hujjatlar",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2923,
+        "parent_id": 1125,
+        "title": "Prezident qarorlari va farmonlari",
+        "url": "madaniyat/sections/prezident-qarorlari-va-farmonlari",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2924,
+        "parent_id": 1125,
+        "title": "Hukumat qarori va farmoyishlari",
+        "url": "madaniyat/sections/hukumat-qarori-va-farmoyishlari",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 8147,
+        "parent_id": 1125,
+        "title": "Hukumat qarori va farmoyishlari",
+        "url": "madaniyat/pages/hukumat-qarori-va-farmoyishlari",
+        "target": "_top",
+        "icon": ""
+      }
+    ]
+  },
+  {
+    "id": 1126,
+    "title": "Raqamli hukumat",
+    "target": "_blank",
+    "url": "madaniyat/",
+    "icon": "",
+    "children": [
+      {
+        "id": 22674,
+        "parent_id": 1126,
+        "title": "Ijro intizomi",
+        "url": "madaniyat/sections/ijro-intizomi",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 21552,
+        "parent_id": 1126,
+        "title": "BYUROKRATIYANI BARTARAF ETISH – 2030",
+        "url": "madaniyat/pages/byurokratiyani-bartaraf-etish-2030",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 17067,
+        "parent_id": 1126,
+        "title": "Onlayn xizmatlardan foydalanish statistikasi",
+        "url": "madaniyat/pages/davlat-xizmatlari-statistikasi",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 17065,
+        "parent_id": 1126,
+        "title": "Qayta aloqa",
+        "url": "madaniyat/feedback",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 17064,
+        "parent_id": 1126,
+        "title": "Davlat xizmatlari",
+        "url": "madaniyat/pages/davlat-xizmatlari-reestri",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2767,
+        "parent_id": 1126,
+        "title": "Ochiq ma'lumotlar",
+        "url": "madaniyat/sections/ochiq-ma-lumotlar",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2780,
+        "parent_id": 1126,
+        "title": "Budjet to‘g‘risidagi qonunchilik hujjatlariga muvofiq ochiq maʼlumotlar",
+        "url": "madaniyat/sections/byudjet-to-g-risidagi-qonunchilik-hujjatlariga-muvofiq-ochiq-malumotlar",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2902,
+        "parent_id": 1126,
+        "title": "Faoliyatga oid ma'lumotlar",
+        "url": "madaniyat/activity_page/faoliyatga-oid-ma-lumotlar",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 13464,
+        "parent_id": 1126,
+        "title": "Jamoatchilik kengashi",
+        "url": "madaniyat/news/jamoatchilik-kengashi",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 3013,
+        "parent_id": 1126,
+        "title": "Faoliyatga oid ochiq ma'lumotlar",
+        "url": "madaniyat/sections/faoliyatga-oid-ma-lumotlar",
+        "target": "_top",
+        "icon": ""
+      }
+    ]
+  },
+  {
+    "id": 1127,
+    "title": "Axborot xizmati",
+    "target": "_self",
+    "url": "#",
+    "icon": "",
+    "children": [
+      {
+        "id": 8159,
+        "parent_id": 1127,
+        "title": "Dastur",
+        "url": "madaniyat/pages/parlamentlararo-ittifoqning-150-yubiley-assambleyasi-ishtirokchilari-uchun-madaniy-dastur",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2973,
+        "parent_id": 1127,
+        "title": "Elektron atamalar",
+        "url": "madaniyat/activity_page/elektron-atamalar",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2972,
+        "parent_id": 1127,
+        "title": "OAV biz haqimizda",
+        "url": "madaniyat/activity_page/oav-biz-haqimizda",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1973,
+        "parent_id": 1127,
+        "title": "Yangiliklar",
+        "url": "madaniyat/news/news",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1972,
+        "parent_id": 1127,
+        "title": "Rahbariyatning bayonotlari va nutqlari",
+        "url": "madaniyat/news/speeches",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1971,
+        "parent_id": 1127,
+        "title": "Voqealar taqvimi",
+        "url": "madaniyat/activity_page/voqealar-taqvimi",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1969,
+        "parent_id": 1127,
+        "title": "Matbuot anjumanlari",
+        "url": "madaniyat/activity_page/matbuot-anjumani",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1968,
+        "parent_id": 1127,
+        "title": "Press-relizlar",
+        "url": "madaniyat/activity_page/press-reliz",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2922,
+        "parent_id": 1127,
+        "title": "Matbuot kotibi",
+        "url": "madaniyat/pages/matbuot-kotibi",
+        "target": "_top",
+        "icon": ""
+      }
+    ]
+  },
+  {
+    "id": 1128,
+    "title": "Bog‘lanish",
+    "target": "_self",
+    "url": "#",
+    "icon": "",
+    "children": [
+      {
+        "id": 17066,
+        "parent_id": 1128,
+        "title": "Korrupsiyani oldini olish bo'yicha murojaat ",
+        "url": "madaniyat/anti-corruption",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 7547,
+        "parent_id": 1128,
+        "title": "Fuqaro murojaati",
+        "url": "madaniyat/pages/fuqaro-murojaati",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2930,
+        "parent_id": 1128,
+        "title": "Ko‘p beriladigan savollar",
+        "url": "madaniyat/faq",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1975,
+        "parent_id": 1128,
+        "title": "So'rovnomalar",
+        "url": "madaniyat/survey",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 1974,
+        "parent_id": 1128,
+        "title": "Kontaktlar",
+        "url": "madaniyat/contacts",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 7549,
+        "parent_id": 1128,
+        "title": "Bank rekvizitlari",
+        "url": "madaniyat/pages/bank-rekvizitlari",
+        "target": "_top",
+        "icon": ""
+      },
+      {
+        "id": 2766,
+        "parent_id": 1128,
+        "title": "Barcha raqamlar",
+        "url": "madaniyat/pages/contacts",
+        "target": "_top",
+        "icon": ""
+      }
+    ]
+  }
+]

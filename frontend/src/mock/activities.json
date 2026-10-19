@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "Teatr va konsert san'ati",
+    "description": "Davlat teatrlari, filarmoniya va konsert tashkilotlari faoliyati",
+    "icon": "Mask",
+    "count": "40 ta teatr",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "title": "Muzeylar va ko‘rgazmalar",
+    "description": "Tarixiy-o‘lkashunoslik, san'at muzeylari va nodir eksponatlar",
+    "icon": "Building",
+    "count": "110+ ta muzey",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "title": "Madaniyat markazlari",
+    "description": "Aholi va yoshlar uchun ijodiy to‘garaklar, havaskorlik ansambllari",
+    "icon": "Sparkles",
+    "count": "825 ta markaz",
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "title": "Musiqa va san'at ta'limi",
+    "description": "Bolalar musiqa va san'at maktablari, oliy ta'lim muassasalari",
+    "icon": "GraduationCap",
+    "count": "330 ta maktab",
+    "link": "#"
+  },
+  {
+    "id": 5,
+    "title": "Moddiy va nomoddiy madaniy meros",
+    "description": "Tarixiy me'moriy yodgorliklar, xalq amaliy san'ati va an'analar",
+    "icon": "Landmark",
+    "count": "8 200+ ob'yekt",
+    "link": "#"
+  },
+  {
+    "id": 6,
+    "title": "Baxshichilik va maqom san'ati",
+    "description": "Milliy folklor, qadimiy dostonchilik va an'anaviy maqom ijrochiligi",
+    "icon": "Music",
+    "count": "Xalqaro festivallar",
+    "link": "#"
+  },
+  {
+    "id": 7,
+    "title": "Xalqaro hamkorlik",
+    "description": "YuNESKO, TURKSOY va xorijiy davlatlar bilan madaniy aloqalar",
+    "icon": "Globe",
+    "count": "50+ xorijiy hamkorlar",
+    "link": "#"
+  },
+  {
+    "id": 8,
+    "title": "Yoshlar siyosati va ma'naviyat",
+    "description": "Yosh ijodkorlarni qo‘llab-quvvatlash va stipendiya dasturlari",
+    "icon": "Users",
+    "count": "Respublika tanlovlari",
+    "link": "#"
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "title": "O‘zbekiston Respublikasi Madaniyat vazirligi",
+  "short_title": "Madaniyat vazirligi",
+  "logo": "https://api-portal.gov.uz/uploads/19/2025/06/20/068812a9-b916-337f-c7f3-86fc511c9bcb_authority_19.png",
+  "favicon": "https://api-portal.gov.uz/uploads/19/2025/06/20/068812a9-b916-337f-c7f3-86fc511c9bcb_authority_19.ico",
+  "address": "100159, Toshkent shahri, Amir Temur 107b",
+  "helpline_title": "Ishonch telefoni",
+  "helpline_value": "+99855 502-33-75",
+  "contact_title": "BARCHA RAQAMLAR",
+  "tin": 200936214,
+  "email": "info@madaniyat.uz",
+  "working_hours": "Dushanba - Juma: 09:00 - 18:00 (Tushlik: 13:00 - 14:00)",
+  "last_updated": "2026-10-19 15:31:26",
+  "socials": [
+    {
+      "name": "Telegram",
+      "link": "https://t.me/s/madaniyatvazirligi",
+      "icon": "send"
+    },
+    {
+      "name": "Facebook",
+      "link": "https://www.facebook.com/madaniyatvazirligiuz",
+      "icon": "facebook"
+    },
+    {
+      "name": "Instagram",
+      "link": "https://www.instagram.com/madaniyatvazirligi/",
+      "icon": "instagram"
+    },
+    {
+      "name": "YouTube",
+      "link": "https://youtube.com/@madaniyatvazirligirasmiy?si=74SawE1KuLPowou_",
+      "icon": "youtube"
+    },
+    {
+      "name": "X",
+      "link": "https://twitter.com/madaniyatuz",
+      "icon": "twitter"
+    }
+  ],
+  "weather": {
+    "city": "Toshkent",
+    "temp": "+22°C",
+    "icon": "sun",
+    "condition": "Ochiq havo"
+  },
+  "currency": [
+    {
+      "code": "USD",
+      "rate": "12 850.00",
+      "diff": "+12.40"
+    },
+    {
+      "code": "EUR",
+      "rate": "13 940.10",
+      "diff": "-5.20"
+    },
+    {
+      "code": "RUB",
+      "rate": "134.80",
+      "diff": "+0.35"
+    }
+  ]
+}

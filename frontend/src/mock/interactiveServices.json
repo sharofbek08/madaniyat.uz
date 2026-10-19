@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Konsert-tomosha faoliyatiga litsenziya olish",
+    "category": "Litsenziyalash",
+    "icon": "FileCheck",
+    "online": true,
+    "url": "https://my.gov.uz"
+  },
+  {
+    "id": 2,
+    "title": "Bolalar musiqa maktabiga ariza yuborish",
+    "category": "Ta'lim",
+    "icon": "GraduationCap",
+    "online": true,
+    "url": "https://my.gov.uz"
+  },
+  {
+    "id": 3,
+    "title": "Madaniy meros ob'yektlari reyestri",
+    "category": "Meros",
+    "icon": "ShieldCheck",
+    "online": true,
+    "url": "#"
+  },
+  {
+    "id": 4,
+    "title": "Vazirlik rahbariyati qabuliga yozilish",
+    "category": "Murojaat",
+    "icon": "CalendarCheck",
+    "online": true,
+    "url": "#"
+  },
+  {
+    "id": 5,
+    "title": "Madaniyat markazlari to‘garaklariga ro‘yxatdan o‘tish",
+    "category": "To‘garaklar",
+    "icon": "UserPlus",
+    "online": true,
+    "url": "#"
+  },
+  {
+    "id": 6,
+    "title": "Ochiq ma'lumotlar portali (Madaniyat)",
+    "category": "Statistika",
+    "icon": "Database",
+    "online": true,
+    "url": "https://data.egov.uz"
+  }
+]
