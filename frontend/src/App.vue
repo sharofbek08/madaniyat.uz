@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 // Import all mock data
 import siteInfo from './mock/siteInfo.json'
@@ -16,28 +16,49 @@ import regionsMap from './mock/regionsMap.json'
 import govLinks from './mock/govLinks.json'
 import usefulLinks from './mock/usefulLinks.json'
 
-// Import components
+// Import layout components
 import TopBar from './components/TopBar.vue'
 import AppHeader from './components/AppHeader.vue'
-import InnerMarquee from './components/InnerMarquee.vue'
-import NewsHeroSection from './components/NewsHeroSection.vue'
-import BannersCarousel from './components/BannersCarousel.vue'
-import ActivitiesSection from './components/ActivitiesSection.vue'
-import InteractiveServicesSection from './components/InteractiveServicesSection.vue'
-import StatisticsSection from './components/StatisticsSection.vue'
-import VacanciesDocPoll from './components/VacanciesDocPoll.vue'
-import ProjectsSection from './components/ProjectsSection.vue'
-import RegionalMapSection from './components/RegionalMapSection.vue'
-import GovPartnersSection from './components/GovPartnersSection.vue'
-import SubscribeBanner from './components/SubscribeBanner.vue'
 import AppFooter from './components/AppFooter.vue'
 
-// Modals
+// Import page views
+import HomePage from './components/HomePage.vue'
+import AboutPage from './components/AboutPage.vue'
+
+// Modals & Drawers
 import SearchModal from './components/SearchModal.vue'
 import SitemapDrawer from './components/SitemapDrawer.vue'
 import AccessibilityDrawer from './components/AccessibilityDrawer.vue'
 import AnthemModal from './components/AnthemModal.vue'
 import FeedbackModal from './components/FeedbackModal.vue'
+
+// Routing State based on URL Hash
+const currentHash = ref(window.location.hash || '#/')
+
+const isAboutPage = computed(() => {
+  const h = currentHash.value.toLowerCase()
+  return (
+    h.includes('about') ||
+    h.includes('pages/about') ||
+    h.includes('vazirlik-haqida') ||
+    h.includes('1957')
+  )
+})
+
+const handleHashChange = () => {
+  currentHash.value = window.location.hash || '#/'
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+const navigateTo = (path) => {
+  if (path === '/' || path === '#/' || path === '#') {
+    window.location.hash = '#/'
+  } else if (path.startsWith('#')) {
+    window.location.hash = path
+  } else {
+    window.location.hash = `#${path}`
+  }
+}
 
 // State for Modals
 const isSearchOpen = ref(false)
@@ -68,10 +89,12 @@ const handleGlobalKeydown = (e) => {
 
 onMounted(() => {
   window.addEventListener('keydown', handleGlobalKeydown)
+  window.addEventListener('hashchange', handleHashChange)
 })
 
 onUnmounted(() => {
   window.removeEventListener('keydown', handleGlobalKeydown)
+  window.removeEventListener('hashchange', handleHashChange)
 })
 </script>
 
@@ -92,43 +115,32 @@ onUnmounted(() => {
       @open-sitemap="isSitemapOpen = true"
     />
 
-    <!-- Main Content Container -->
+    <!-- Main Dynamic Content Container -->
     <main id="main-content">
-      <!-- 3. Inner Marquee Ticker -->
-      <InnerMarquee :items="runner" />
+      <!-- 1:1 About Ministry Page View -->
+      <AboutPage 
+        v-if="isAboutPage"
+        @navigate="navigateTo"
+      />
 
-      <!-- 4. Hero / Lead News Section -->
-      <NewsHeroSection :news="news" />
-
-      <!-- 5. Banners Carousel -->
-      <BannersCarousel :banners="banners" />
-
-      <!-- 6. Cultural Activities Section -->
-      <ActivitiesSection :activities="activities" />
-
-      <!-- 7. Interactive Services & Events Calendar -->
-      <InteractiveServicesSection :services="interactiveServices" />
-
-      <!-- 8. Ministry Statistics Counters -->
-      <StatisticsSection :statistics="statistics" />
-
-      <!-- 9. Vacancies, Documents & Citizen Poll -->
-      <VacanciesDocPoll :data="vacanciesDocumentsPoll" />
-
-      <!-- 10. National Projects Section -->
-      <ProjectsSection :projects="projects" />
-
-      <!-- 11. Regional Map & Directory -->
-      <RegionalMapSection :regions="regionsMap" />
-
-      <!-- 12. Government Partners & Useful Links -->
-      <GovPartnersSection :govLinks="govLinks" :usefulLinks="usefulLinks" />
-
-      <!-- 13. Push Notification / Subscribe Banner -->
-      <SubscribeBanner />
+      <!-- Home Page View -->
+      <HomePage 
+        v-else
+        :runner="runner"
+        :news="news"
+        :banners="banners"
+        :activities="activities"
+        :interactiveServices="interactiveServices"
+        :statistics="statistics"
+        :vacanciesDocumentsPoll="vacanciesDocumentsPoll"
+        :projects="projects"
+        :regionsMap="regionsMap"
+        :govLinks="govLinks"
+        :usefulLinks="usefulLinks"
+      />
     </main>
 
-    <!-- 14. Comprehensive Footer -->
+    <!-- Comprehensive Footer -->
     <AppFooter 
       :siteInfo="siteInfo" 
       :navigation="navigation" 

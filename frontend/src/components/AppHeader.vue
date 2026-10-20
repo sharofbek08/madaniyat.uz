@@ -36,7 +36,7 @@ const toggleMobileNav = () => {
     <div class="main-branding">
       <div class="container branding-container">
         <!-- Logo and Ministry Name -->
-        <a href="/" class="brand-link">
+        <a href="#/" class="brand-link">
           <img :src="siteInfo.logo" alt="O‘zbekiston Respublikasi Madaniyat vazirligi gerbi" class="brand-logo" />
           <div class="brand-text">
             <span class="country-name">O‘zbekiston Respublikasi</span>

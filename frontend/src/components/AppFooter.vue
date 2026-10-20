@@ -140,7 +140,7 @@ const scrollToTop = () => {
         <div class="footer-col links-col">
           <h4 class="col-heading">Vazirlik haqida</h4>
           <ul class="footer-links-list">
-            <li><a href="#about">Vazirlik nizomi va maqsadlari</a></li>
+            <li><a href="#madaniyat/pages/about">Vazirlik haqida</a></li>
             <li><a href="#structure">Tashkilot tuzilmasi</a></li>
             <li><a href="#leadership">Rahbariyat tarkibi</a></li>
             <li><a href="#staff">Markaziy apparat</a></li>
