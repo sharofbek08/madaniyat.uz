@@ -1,0 +1,82 @@
+{
+  "id": 2554,
+  "slug": "structure",
+  "category_id": 6,
+  "category_title": "Sahifalar",
+  "title": "Vazirlik tuzilmasi",
+  "age_limit": "0+",
+  "updated_date": "2024-09-12 14:48:52",
+  "views": 11345,
+  "image": "https://api-portal.gov.uz/uploads/12bcaae2-9733-a037-2596-4151e0927156_media_.jpg",
+  "breadcrumbs": [
+    {
+      "title": "Bosh sahifa",
+      "url": "#/"
+    },
+    {
+      "title": "Vazirlik haqida",
+      "url": "#madaniyat/pages/about"
+    },
+    {
+      "title": "Vazirlik tuzilmasi",
+      "url": ""
+    }
+  ],
+  "sidebar": [
+    {
+      "id": 1957,
+      "title": "Vazirlik haqida",
+      "url": "#madaniyat/pages/about",
+      "slug": "about",
+      "active": false
+    },
+    {
+      "id": 1958,
+      "title": "Tashkilot tuzilmasi",
+      "url": "#madaniyat/pages/structure",
+      "slug": "structure",
+      "active": true
+    },
+    {
+      "id": 1962,
+      "title": "Rahbariyat",
+      "url": "#madaniyat/guides",
+      "slug": "guides",
+      "active": false
+    },
+    {
+      "id": 1959,
+      "title": "Markaziy apparat",
+      "url": "#madaniyat/departments/staff",
+      "slug": "staff",
+      "active": false
+    },
+    {
+      "id": 1961,
+      "title": "Tizimdagi tashkilotlar",
+      "url": "#madaniyat/departments/subordinate",
+      "slug": "subordinate",
+      "active": false
+    },
+    {
+      "id": 1960,
+      "title": "Hududiy boshqarmalar",
+      "url": "#madaniyat/departments/regional",
+      "slug": "regional",
+      "active": false
+    },
+    {
+      "id": 2921,
+      "title": "Bo‘sh ish o‘rinlari",
+      "url": "#madaniyat/pages/bo-sh-ish-o-rinlari",
+      "slug": "vacancies",
+      "active": false
+    }
+  ],
+  "social_share": {
+    "facebook": "https://facebook.com/sharer/sharer.php?u=https://gov.uz/oz/madaniyat/pages/structure",
+    "twitter": "https://x.com/intent/tweet?url=https://gov.uz/oz/madaniyat/pages/structure",
+    "telegram": "https://t.me/share/url?url=https://gov.uz/oz/madaniyat/pages/structure"
+  },
+  "description": "O‘zbekiston Respublikasi Madaniyat vazirligi markaziy apparati va tizim tashkilotlarining tashkiliy tuzilmasi."
+}

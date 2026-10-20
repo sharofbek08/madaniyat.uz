@@ -1,0 +1,250 @@
+{
+  "title": "Markaziy apparat",
+  "slug": "staff",
+  "active": 1321,
+  "breadcrumbs": [
+    {
+      "title": "Bosh sahifa",
+      "url": "#/"
+    },
+    {
+      "title": "Vazirlik haqida",
+      "url": "#madaniyat/pages/about"
+    },
+    {
+      "title": "Markaziy apparat",
+      "url": ""
+    }
+  ],
+  "sidebar": [
+    {
+      "id": 1957,
+      "title": "Vazirlik haqida",
+      "url": "#madaniyat/pages/about",
+      "slug": "about",
+      "active": false
+    },
+    {
+      "id": 1958,
+      "title": "Tashkilot tuzilmasi",
+      "url": "#madaniyat/pages/structure",
+      "slug": "structure",
+      "active": false
+    },
+    {
+      "id": 1962,
+      "title": "Rahbariyat",
+      "url": "#madaniyat/guides",
+      "slug": "guides",
+      "active": false
+    },
+    {
+      "id": 1959,
+      "title": "Markaziy apparat",
+      "url": "#madaniyat/departments/staff",
+      "slug": "staff",
+      "active": true
+    },
+    {
+      "id": 1961,
+      "title": "Tizimdagi tashkilotlar",
+      "url": "#madaniyat/departments/subordinate",
+      "slug": "subordinate",
+      "active": false
+    },
+    {
+      "id": 1960,
+      "title": "Hududiy boshqarmalar",
+      "url": "#madaniyat/departments/regional",
+      "slug": "regional",
+      "active": false
+    },
+    {
+      "id": 2921,
+      "title": "Bo‘sh ish o‘rinlari",
+      "url": "#madaniyat/pages/bo-sh-ish-o-rinlari",
+      "slug": "vacancies",
+      "active": false
+    }
+  ],
+  "social_share": {
+    "facebook": "https://facebook.com/sharer/sharer.php?u=https://gov.uz/oz/madaniyat/departments/staff?active=1321",
+    "twitter": "https://x.com/intent/tweet?url=https://gov.uz/oz/madaniyat/departments/staff?active=1321",
+    "telegram": "https://t.me/share/url?url=https://gov.uz/oz/madaniyat/departments/staff?active=1321"
+  },
+  "departments": [
+    {
+      "id": 1321,
+      "title": "Vazir kotibiyati",
+      "guides": [
+        {
+          "id": 1201,
+          "title": "Qoʻqonboyev Umidjon Abdurahimovich",
+          "position_title": "O‘zbekiston Respublikasi Madaniyat vaziri kotibiyati mudiri",
+          "image": "https://api-portal.gov.uz/uploads/19/2024/02/27/18a9933c-6938-37e5-fe44-b376607ee180_guide_1201.jpg",
+          "phone": "+998 (55) 502-33-77",
+          "email": "kotibiyat@madaniyat.uz",
+          "reception_day": "Dushanba - Juma 09:00 - 18:00",
+          "address": "100159, Toshkent shahri, Amir Temur 107b",
+          "description": "Vazir faoliyatini tashkiliy, axborot-tahliliy va protokol jihatdan ta'minlash"
+        }
+      ],
+      "child": []
+    },
+    {
+      "id": 7058,
+      "title": "Vazir yordamchisi",
+      "guides": [
+        {
+          "id": 1202,
+          "title": "Foziljonov Sarvarbek Kozimjon o‘g‘li",
+          "position_title": "O‘zbekiston Respublikasi Madaniyat vaziri yordamchisi",
+          "image": "https://api-portal.gov.uz/uploads/19/2026/05/21/b1650e47-486d-6508-825b-f7ffbf5362a5_guide_931.jpg",
+          "phone": "+998 (55) 502-33-75",
+          "email": "yordamchi@madaniyat.uz",
+          "reception_day": "Dushanba - Juma 09:00 - 18:00",
+          "address": "100159, Toshkent shahri, Amir Temur 107b",
+          "description": "Vazirning kundalik ish grafigi va uchrashuvlarini muvofiqlashtirish"
+        }
+      ],
+      "child": []
+    },
+    {
+      "id": 7059,
+      "title": "Vazir maslahatchilari",
+      "guides": [
+        {
+          "id": 1203,
+          "title": "Imomova Shahribonu Komilovna",
+          "position_title": "Vazirning axborot siyosati masalalari bo‘yicha maslahatchisi – matbuot kotibi",
+          "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/eb1b0dff-5bad-b3fb-ddb3-41e079694ee0_guide_10448.jpeg",
+          "phone": "+998 (55) 502-33-76",
+          "email": "press@madaniyat.uz",
+          "reception_day": "Seshanba, Payshanba 14:00 - 17:00",
+          "address": "100159, Toshkent shahri, Amir Temur 107b",
+          "description": "Ommaviy axborot vositalari bilan aloqalar va rasmiy bayonotlar"
+        },
+        {
+          "id": 1204,
+          "title": "To‘rayev Isoq Latifovich",
+          "position_title": "Vazirning ma'naviy-ma'rifiy ishlar samaradorligini oshirish bo'yicha maslahatchisi",
+          "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/0a123e3a-527a-bc4a-6d46-10e176bde3fa_guide_.jpg",
+          "phone": "+998 (55) 502-33-77",
+          "email": "til@madaniyat.uz",
+          "reception_day": "Chorshanba 15:00 - 17:00",
+          "address": "100159, Toshkent shahri, Amir Temur 107b",
+          "description": "Davlat tili to'g'risidagi qonun hujjatlariga rioya etilishini ta'minlash"
+        }
+      ],
+      "child": []
+    },
+    {
+      "id": 7057,
+      "title": "Boshqarmalar",
+      "guides": [
+        {
+          "id": 1205,
+          "title": "Berdimuratov Ernazar Muratovich",
+          "position_title": "Investitsiyalarni jalb qilish va DXShni rivojlantirish boshqarmasi boshlig‘i",
+          "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/5f9343eb-3e6b-0b0b-9f11-0dc2d5ece88c_guide_.jpg",
+          "phone": "+998 (55) 502-33-80",
+          "email": "invest@madaniyat.uz",
+          "reception_day": "Payshanba 14:00 - 17:00",
+          "address": "100159, Toshkent shahri, Amir Temur 107b",
+          "description": "Madaniyat sohasiga to‘g‘ridan-to‘g‘ri investitsiyalar jalb qilish"
+        }
+      ],
+      "child": [
+        {
+          "id": 801,
+          "title": "Investitsiyalarni jalb qilish va davlat-xususiy sheriklikni rivojlantirish boshqarmasi",
+          "head": "Berdimuratov Ernazar Muratovich",
+          "phone": "+998 (55) 502-33-80",
+          "email": "invest@madaniyat.uz"
+        },
+        {
+          "id": 802,
+          "title": "Yig'ma axborot-tahlil va strategik rivojlantirish boshqarmasi",
+          "head": "Ortiqov Shavkatjon Zokirjonovich",
+          "phone": "+998 (55) 502-33-81",
+          "email": "tahlil@madaniyat.uz"
+        },
+        {
+          "id": 803,
+          "title": "Teatr va sirk san'atini rivojlantirish boshqarmasi",
+          "head": "Sagdiev Yodgor Xabibovich",
+          "phone": "+998 (55) 502-33-82",
+          "email": "teatr@madaniyat.uz"
+        },
+        {
+          "id": 804,
+          "title": "Musiqa va xoreografiya san'atini rivojlantirish boshqarmasi",
+          "head": "Kabduraxmanov Alibek Asatullaevich",
+          "phone": "+998 (55) 502-33-83",
+          "email": "musiqa@madaniyat.uz"
+        },
+        {
+          "id": 805,
+          "title": "Kadrlar bilan ishlash va ta'lim muassasalari boshqarmasi",
+          "head": "Fayziyev Orifjon Tulkinovich",
+          "phone": "+998 (55) 502-33-84",
+          "email": "kadr@madaniyat.uz"
+        }
+      ]
+    },
+    {
+      "id": 7060,
+      "title": "Bo'limlar",
+      "guides": [
+        {
+          "id": 1206,
+          "title": "Akbarov Shohrux Dilshatovich",
+          "position_title": "Murojaatlar bilan ishlash bo‘limi boshlig‘i",
+          "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/be4dba0d-f937-affd-b93c-2e3433ebf391_guide_.jpg",
+          "phone": "+998 (55) 502-33-87",
+          "email": "murojaat@madaniyat.uz",
+          "reception_day": "Har kuni 09:00 - 18:00",
+          "address": "100159, Toshkent shahri, Amir Temur 107b",
+          "description": "Jismoniy va yuridik shaxslarning murojaatlarini ko‘rib chiqish"
+        }
+      ],
+      "child": [
+        {
+          "id": 901,
+          "title": "Murojaatlar bilan ishlash bo‘limi",
+          "head": "Akbarov Shohrux Dilshatovich",
+          "phone": "+998 (55) 502-33-87",
+          "email": "murojaat@madaniyat.uz"
+        },
+        {
+          "id": 902,
+          "title": "Davlat xaridlari bo‘limi",
+          "head": "Batirov Farrux Tajimaxammatovich",
+          "phone": "+998 (55) 502-33-85",
+          "email": "xarid@madaniyat.uz"
+        },
+        {
+          "id": 903,
+          "title": "Iqtisodiy tahlil va moliya bo‘limi",
+          "head": "Usmonov Bahrom Abdinazarovich",
+          "phone": "+998 (55) 502-33-86",
+          "email": "moliya@madaniyat.uz"
+        },
+        {
+          "id": 904,
+          "title": "Xalqaro hamkorlik va reytinglar bilan ishlash bo‘limi",
+          "head": "Nurmatov Azamat Mirzaxmedovich",
+          "phone": "+998 (55) 502-33-88",
+          "email": "xalqaro@madaniyat.uz"
+        },
+        {
+          "id": 905,
+          "title": "Yuridik ta'minlash bo'limi",
+          "head": "Sharipov Sherzod Maqsudovich",
+          "phone": "+998 (55) 502-33-89",
+          "email": "yurist@madaniyat.uz"
+        }
+      ]
+    }
+  ]
+}

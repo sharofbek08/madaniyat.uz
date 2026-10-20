@@ -24,6 +24,9 @@ import AppFooter from './components/AppFooter.vue'
 // Import page views
 import HomePage from './components/HomePage.vue'
 import AboutPage from './components/AboutPage.vue'
+import StructurePage from './components/StructurePage.vue'
+import GuidesPage from './components/GuidesPage.vue'
+import StaffPage from './components/StaffPage.vue'
 
 // Modals & Drawers
 import SearchModal from './components/SearchModal.vue'
@@ -35,8 +38,25 @@ import FeedbackModal from './components/FeedbackModal.vue'
 // Routing State based on URL Hash
 const currentHash = ref(window.location.hash || '#/')
 
+const isStructurePage = computed(() => {
+  const h = currentHash.value.toLowerCase()
+  return h.includes('structure') || h.includes('tuzilmasi') || h.includes('1958')
+})
+
+const isGuidesPage = computed(() => {
+  const h = currentHash.value.toLowerCase()
+  return h.includes('guides') || h.includes('rahbariyat') || h.includes('1962')
+})
+
+const isStaffPage = computed(() => {
+  const h = currentHash.value.toLowerCase()
+  return h.includes('staff') || h.includes('markaziy-apparat') || h.includes('1959')
+})
+
 const isAboutPage = computed(() => {
   const h = currentHash.value.toLowerCase()
+  // Check about only if not matching the other specific pages
+  if (isStructurePage.value || isGuidesPage.value || isStaffPage.value) return false
   return (
     h.includes('about') ||
     h.includes('pages/about') ||
@@ -117,9 +137,27 @@ onUnmounted(() => {
 
     <!-- Main Dynamic Content Container -->
     <main id="main-content">
+      <!-- 1:1 Structure Page View -->
+      <StructurePage 
+        v-if="isStructurePage"
+        @navigate="navigateTo"
+      />
+
+      <!-- 1:1 Leadership / Guides Page View -->
+      <GuidesPage 
+        v-else-if="isGuidesPage"
+        @navigate="navigateTo"
+      />
+
+      <!-- 1:1 Central Apparatus / Staff Page View -->
+      <StaffPage 
+        v-else-if="isStaffPage"
+        @navigate="navigateTo"
+      />
+
       <!-- 1:1 About Ministry Page View -->
       <AboutPage 
-        v-if="isAboutPage"
+        v-else-if="isAboutPage"
         @navigate="navigateTo"
       />
 

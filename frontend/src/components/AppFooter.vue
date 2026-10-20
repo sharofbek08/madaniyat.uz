@@ -141,9 +141,9 @@ const scrollToTop = () => {
           <h4 class="col-heading">Vazirlik haqida</h4>
           <ul class="footer-links-list">
             <li><a href="#madaniyat/pages/about">Vazirlik haqida</a></li>
-            <li><a href="#structure">Tashkilot tuzilmasi</a></li>
-            <li><a href="#leadership">Rahbariyat tarkibi</a></li>
-            <li><a href="#staff">Markaziy apparat</a></li>
+            <li><a href="#madaniyat/pages/structure">Tashkilot tuzilmasi</a></li>
+            <li><a href="#madaniyat/guides">Rahbariyat</a></li>
+            <li><a href="#madaniyat/departments/staff?active=1321">Markaziy apparat</a></li>
             <li><a href="#subordinate">Tizimdagi tashkilotlar</a></li>
             <li><a href="#regional">Hududiy boshqarmalar</a></li>
             <li><a href="#vacancies">Bo‘sh ish o‘rinlari</a></li>
