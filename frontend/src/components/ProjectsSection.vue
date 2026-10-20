@@ -8,27 +8,26 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="home-section projects-section home-section-alt">
+  <section class="projects-section py-5">
     <div class="container">
-      <div class="section-header-row">
-        <div>
-          <h2 class="section-title">Amalga oshirilayotgan loyihalar</h2>
-          <p class="section-subtitle">Davlatimiz rahbari tashabbusi bilan madaniyat sohasida olib borilayotgan keng ko‘lamli loyihalar</p>
-        </div>
-
-        <a href="#all-projects" class="see-all-btn">
-          <span>Barcha loyihalar</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
+      <div class="projects-header">
+        <h2 class="font--lg font-bold uppercase" style="color: var(--color-text-primary)">
+          Amalga oshirilayotgan loyihalar
+        </h2>
+        <a href="#/madaniyat/pages/about" class="details-link_link__EkQDj">
+          Barcha loyihalar
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12h10m0 0-4-4m4 4-4 4"/>
+            </svg>
+          </span>
         </a>
       </div>
 
       <div class="projects-grid">
         <div v-for="proj in projects" :key="proj.id" class="project-card">
           <div class="project-card-top">
-            <span class="project-badge badge badge-primary">{{ proj.badge }}</span>
+            <span class="project-badge">{{ proj.badge }}</span>
             <span class="project-status">{{ proj.status }}</span>
           </div>
 
@@ -41,17 +40,16 @@ const props = defineProps({
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                 <circle cx="9" cy="7" r="4"/>
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
               <span>{{ proj.participants }}</span>
             </div>
 
-            <a href="#project-details" class="project-arrow-btn">
+            <span class="project-arrow-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="5" y1="12" x2="19" y2="12"/>
                 <polyline points="12 5 19 12 12 19"/>
               </svg>
-            </a>
+            </span>
           </div>
         </div>
       </div>
@@ -61,60 +59,78 @@ const props = defineProps({
 
 <style scoped>
 .projects-section {
-  padding-top: 36px;
-  padding-bottom: 36px;
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.projects-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 1.5rem;
 }
 
 .project-card {
   background-color: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
+  transition: var(--transition);
   position: relative;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
   border-color: var(--color-primary);
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 4px 16px rgba(1, 61, 140, 0.08);
+  transform: translateY(-3px);
 }
 
 .project-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 1rem;
+}
+
+.project-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: rgba(1, 61, 140, 0.08);
+  padding: 3px 8px;
+  border-radius: 4px;
 }
 
 .project-status {
   font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--color-success);
+  font-weight: 600;
+  color: #2b8a3e;
 }
 
 .project-title {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--color-gray-900);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #222222;
   line-height: 1.35;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .project-desc {
-  font-size: 0.88rem;
-  color: var(--color-gray-600);
-  line-height: 1.5;
-  margin-bottom: 20px;
+  font-size: 0.8125rem;
+  color: #707070;
+  line-height: 1.45;
+  margin-bottom: 1.5rem;
   flex: 1;
 }
 
@@ -122,49 +138,36 @@ const props = defineProps({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid var(--border-color);
-  padding-top: 14px;
+  border-top: 1px solid #f1f3f5;
+  padding-top: 1rem;
 }
 
 .participants-info {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-gray-500);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #868e96;
 }
 
 .participants-info svg {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   color: var(--color-primary);
 }
 
-.project-arrow-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-full);
-  background-color: var(--color-primary-50);
+.project-arrow-icon {
+  color: #adb5bd;
+  transition: all 0.2s ease;
+}
+
+.project-card:hover .project-arrow-icon {
   color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition-fast);
-}
-
-.project-arrow-btn svg {
-  width: 16px;
-  height: 16px;
-}
-
-.project-card:hover .project-arrow-btn {
-  background-color: var(--color-primary);
-  color: #ffffff;
   transform: translateX(4px);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }

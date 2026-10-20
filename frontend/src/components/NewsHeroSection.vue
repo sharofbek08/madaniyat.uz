@@ -13,33 +13,55 @@ const activeCategory = ref('all')
 const categories = [
   { id: 'all', label: 'Barchasi' },
   { id: 'news', label: 'Yangiliklar' },
-  { id: 'events', label: 'Voqealar taqvimi' },
-  { id: 'announcements', label: 'E‘lonlar' },
-  { id: 'press', label: 'Matbuot xabarlari' }
+  { id: 'tenders', label: 'Tanlovlar va tenderlar' },
+  { id: 'eco', label: 'Ekofaol xodim' },
+  { id: 'speeches', label: 'Nutqlar' },
+  { id: 'council', label: 'Jamoatchilik kengashi' }
 ]
 
 const filteredNews = computed(() => {
   if (activeCategory.value === 'all') return props.news
-  if (activeCategory.value === 'news') return props.news.filter(n => n.category_code === 'news' || !n.category_code)
-  if (activeCategory.value === 'events') return props.news.filter(n => n.activity_title?.includes('Voqealar') || n.title?.includes('repertuar'))
+  if (activeCategory.value === 'news') {
+    return props.news.filter(n => n.category_code === 'news' || n.category_title === 'Yangiliklar')
+  }
+  if (activeCategory.value === 'tenders') {
+    return props.news.filter(n => n.title?.toLowerCase().includes('tanlov') || n.title?.toLowerCase().includes('tender') || n.category_code === 'tenders')
+  }
+  if (activeCategory.value === 'eco') {
+    return props.news.filter(n => n.title?.toLowerCase().includes('eko') || n.category_code === 'eco')
+  }
   return props.news
 })
 
-const leadNews = computed(() => filteredNews.value[0] || null)
-const sideNews = computed(() => filteredNews.value.slice(1, 4))
-const bottomNews = computed(() => filteredNews.value.slice(4, 8))
-
-const formatDate = (dateStr) => {
-  if (!dateStr) return ''
+const getDay = (dateStr) => {
+  if (!dateStr) return '20'
   try {
     const d = new Date(dateStr)
-    const months = ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'Iyun', 'Iyul', 'Avgust', 'Sentabr', 'Oktabr', 'Noyabr', 'Dekabr']
-    const day = d.getDate()
-    const month = months[d.getMonth()]
+    return String(d.getDate()).padStart(2, '0')
+  } catch (e) {
+    return '20'
+  }
+}
+
+const getMonthShort = (dateStr) => {
+  if (!dateStr) return 'OKT'
+  try {
+    const d = new Date(dateStr)
+    const months = ['YAN', 'FEV', 'MAR', 'APR', 'MAY', 'IYUN', 'IYUL', 'AVG', 'SEN', 'OKT', 'NOY', 'DEK']
+    return months[d.getMonth()] || 'OKT'
+  } catch (e) {
+    return 'OKT'
+  }
+}
+
+const formatDate = (dateStr) => {
+  if (!dateStr) return '20.10.2026'
+  try {
+    const d = new Date(dateStr)
+    const day = String(d.getDate()).padStart(2, '0')
+    const month = String(d.getMonth() + 1).padStart(2, '0')
     const year = d.getFullYear()
-    const hours = String(d.getHours()).padStart(2, '0')
-    const mins = String(d.getMinutes()).padStart(2, '0')
-    return `${day}-${month}, ${year} ${hours}:${mins}`
+    return `${day}.${month}.${year}`
   } catch (e) {
     return dateStr
   }
@@ -47,21 +69,20 @@ const formatDate = (dateStr) => {
 </script>
 
 <template>
-  <section class="home-section news-section">
+  <section class="section-news">
     <div class="container">
-      <!-- Section Header -->
-      <div class="section-header-row">
-        <div>
-          <h2 class="section-title">So‘nggi yangiliklar</h2>
-          <p class="section-subtitle">Madaniyat vazirligi va tizimdagi tashkilotlarning rasmiy xabarlari</p>
-        </div>
+      <!-- Section Header with Category Filter Buttons -->
+      <div class="news-header-row">
+        <h2 class="font--lg font-bold uppercase" style="color: var(--color-text-primary)">
+          Yangiliklar
+        </h2>
 
-        <!-- Filter tabs -->
-        <div class="category-tabs">
+        <!-- Category Pills -->
+        <div class="category-pills">
           <button 
             v-for="cat in categories" 
-            :key="cat.id" 
-            class="tab-btn"
+            :key="cat.id"
+            class="cat-pill-btn"
             :class="{ active: activeCategory === cat.id }"
             @click="activeCategory = cat.id"
           >
@@ -70,144 +91,66 @@ const formatDate = (dateStr) => {
         </div>
       </div>
 
-      <!-- Main News Grid -->
-      <div class="news-main-grid">
-        <!-- Lead Featured Article (Big Card) -->
-        <article v-if="leadNews" class="lead-news-card">
-          <a :href="`#news-${leadNews.id}`" class="lead-image-link">
+      <!-- 3-Column News Grid (Gov.uz Mantine 3-stack) -->
+      <div class="news-grid">
+        <article 
+          v-for="item in filteredNews.slice(0, 6)" 
+          :key="item.id" 
+          class="news-card_news__qjYn_"
+        >
+          <!-- Image Container -->
+          <a :href="`#/madaniyat/news/${item.id}`" class="news-card_news__img__odWx_">
             <img 
-              :src="leadNews.anons_image" 
-              :alt="leadNews.title"
-              class="lead-image"
-              loading="lazy" 
+              :src="item.anons_image || '/img/ministry_logo.png'" 
+              :alt="item.title"
+              class="news-card-img"
+              loading="lazy"
             />
-            <div class="image-overlay-gradient"></div>
-            <span class="lead-badge badge badge-primary">
-              {{ leadNews.activity_title || leadNews.category_title || 'Yangiliklar' }}
-            </span>
           </a>
 
-          <div class="lead-content">
-            <div class="news-meta">
-              <span class="meta-item date-meta">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                  <line x1="16" y1="2" x2="16" y2="6"/>
-                  <line x1="8" y1="2" x2="8" y2="6"/>
-                  <line x1="3" y1="10" x2="21" y2="10"/>
-                </svg>
-                {{ formatDate(leadNews.date) }}
-              </span>
+          <!-- Signature Overlapping White Content Box -->
+          <div class="news-card_news__content__sqBXx">
+            <div class="news-main-body">
+              <!-- Left Date Box -->
+              <div class="news-card_news__date__hlyaP">
+                <span class="month-short">{{ getMonthShort(item.date) }}</span>
+                <strong class="day-number">{{ getDay(item.date) }}</strong>
+              </div>
 
-              <span class="meta-item views-meta">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                  <circle cx="12" cy="12" r="3"/>
-                </svg>
-                {{ leadNews.views || 0 }} ko‘rildi
-              </span>
+              <!-- Right Text Box -->
+              <div class="news-text-box">
+                <p class="news-card_news__title__2kejC">
+                  <a :href="`#/madaniyat/news/${item.id}`">{{ item.title }}</a>
+                </p>
+                <p v-if="item.anons" class="news-card_news__anons__O53sh">
+                  {{ item.anons }}
+                </p>
+                <p v-else class="news-card_news__anons__O53sh">
+                  {{ item.activity_title || 'O‘zbekiston Respublikasi Madaniyat vazirligi rasmiy axboroti' }}
+                </p>
+              </div>
             </div>
 
-            <h3 class="lead-title">
-              <a :href="`#news-${leadNews.id}`">{{ leadNews.title }}</a>
-            </h3>
-
-            <p class="lead-anons">
-              {{ leadNews.anons || 'O‘zbekiston Respublikasi Madaniyat vazirligi tomonidan tasdiqlangan dastur doirasida yurtimiz teatrlari va madaniyat maskanlarida yangi ijodiy mavsum spektakllari va ko‘rgazmalari boshlandi.' }}
-            </p>
-
-            <div class="lead-footer">
-              <a :href="`#news-${leadNews.id}`" class="read-more-btn">
-                <span>Batafsil o‘qish</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                  <polyline points="12 5 19 12 12 19"/>
-                </svg>
+            <!-- Card Footer -->
+            <div class="news-card_news__footer__NnhqK">
+              <span class="footer-date">{{ formatDate(item.date) }}</span>
+              <a :href="`#/madaniyat/news/${item.id}`" class="news-card_news__type__1D3lj">
+                {{ item.category_title || 'Yangiliklar' }}
               </a>
             </div>
           </div>
         </article>
-
-        <!-- Side News Column (3 items) -->
-        <div class="side-news-column">
-          <article v-for="item in sideNews" :key="item.id" class="side-news-card">
-            <a :href="`#news-${item.id}`" class="side-image-link">
-              <img 
-                :src="item.anons_image" 
-                :alt="item.title"
-                class="side-image"
-                loading="lazy" 
-              />
-            </a>
-
-            <div class="side-content">
-              <div class="news-meta">
-                <span class="meta-tag">{{ item.activity_title || item.category_title || 'Yangilik' }}</span>
-                <span class="meta-bullet">•</span>
-                <span class="meta-date">{{ formatDate(item.date) }}</span>
-              </div>
-
-              <h4 class="side-title">
-                <a :href="`#news-${item.id}`">{{ item.title }}</a>
-              </h4>
-
-              <div class="side-footer">
-                <span class="views-mini">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                    <circle cx="12" cy="12" r="3"/>
-                  </svg>
-                  {{ item.views || 0 }}
-                </span>
-              </div>
-            </div>
-          </article>
-        </div>
       </div>
 
-      <!-- Additional News Row -->
-      <div v-if="bottomNews.length > 0" class="bottom-news-row">
-        <article v-for="item in bottomNews" :key="item.id" class="grid-news-card">
-          <a :href="`#news-${item.id}`" class="grid-image-link">
-            <img 
-              :src="item.anons_image" 
-              :alt="item.title"
-              class="grid-image"
-              loading="lazy" 
-            />
-            <span class="grid-badge badge badge-primary">
-              {{ item.category_title || 'Yangilik' }}
-            </span>
-          </a>
-
-          <div class="grid-content">
-            <div class="news-meta">
-              <span class="meta-date">{{ formatDate(item.date) }}</span>
-              <span class="meta-bullet">•</span>
-              <span class="views-mini">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                  <circle cx="12" cy="12" r="3"/>
-                </svg>
-                {{ item.views || 0 }}
-              </span>
-            </div>
-
-            <h4 class="grid-title">
-              <a :href="`#news-${item.id}`">{{ item.title }}</a>
-            </h4>
-          </div>
-        </article>
-      </div>
-
-      <!-- Bottom Call to action -->
-      <div class="news-bottom-actions">
-        <a href="#all-news" class="see-all-btn">
-          <span>Barcha yangiliklar bilan tanishish</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
+      <!-- Bottom 'Barcha yangiliklar' link -->
+      <div class="news-bottom-link">
+        <a href="#/madaniyat/news/news" class="details-link_link__EkQDj">
+          Barcha yangiliklar
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12h10m0 0-4-4m4 4-4 4"/>
+            </svg>
+          </span>
         </a>
       </div>
     </div>
@@ -215,370 +158,213 @@ const formatDate = (dateStr) => {
 </template>
 
 <style scoped>
-.news-section {
-  padding-top: 24px;
+.section-news {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
 }
 
-.category-tabs {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background-color: var(--color-gray-100);
-  padding: 4px;
-  border-radius: var(--radius-full);
-  overflow-x: auto;
-}
-
-.tab-btn {
-  padding: 6px 16px;
-  border-radius: var(--radius-full);
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: var(--color-gray-600);
-  transition: var(--transition-fast);
-  white-space: nowrap;
-}
-
-.tab-btn:hover {
-  color: var(--color-primary);
-}
-
-.tab-btn.active {
-  background-color: var(--color-primary);
-  color: #ffffff;
-  box-shadow: 0 2px 4px rgba(1, 61, 140, 0.2);
-}
-
-/* Main Grid */
-.news-main-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 24px;
-  margin-bottom: 24px;
-}
-
-/* Lead Card */
-.lead-news-card {
-  background-color: #ffffff;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-}
-
-.lead-news-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.lead-image-link {
-  position: relative;
-  display: block;
-  height: 320px;
-  overflow: hidden;
-  background-color: #e2e8f0;
-}
-
-.lead-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.lead-news-card:hover .lead-image {
-  transform: scale(1.05);
-}
-
-.image-overlay-gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 60%);
-}
-
-.lead-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 2;
-  box-shadow: var(--shadow-sm);
-}
-
-.lead-content {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.news-meta {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 0.8rem;
-  color: var(--color-gray-500);
-  margin-bottom: 12px;
-}
-
-.meta-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.meta-item svg,
-.views-mini svg {
-  width: 14px;
-  height: 14px;
-}
-
-.lead-title {
-  font-size: 1.35rem;
-  font-weight: 800;
-  line-height: 1.35;
-  color: var(--color-gray-900);
-  margin-bottom: 12px;
-}
-
-.lead-title a:hover {
-  color: var(--color-primary);
-}
-
-.lead-anons {
-  font-size: 0.92rem;
-  color: var(--color-gray-600);
-  line-height: 1.55;
-  margin-bottom: 20px;
-  flex: 1;
-}
-
-.lead-footer {
+.news-header-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid var(--border-color);
-  padding-top: 16px;
+  gap: 1.5rem;
+  padding-bottom: 1.75rem;
+  flex-wrap: wrap;
 }
 
-.read-more-btn {
-  display: inline-flex;
+.category-pills {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.88rem;
-  font-weight: 700;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cat-pill-btn {
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #ced4da;
+  background-color: transparent;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.cat-pill-btn:hover {
+  border-color: var(--color-primary);
   color: var(--color-primary);
-  transition: gap var(--transition-fast);
 }
 
-.read-more-btn svg {
-  width: 16px;
-  height: 16px;
-  transition: transform var(--transition-fast);
+.cat-pill-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
 }
 
-.read-more-btn:hover {
-  color: var(--color-primary-dark);
+/* News Grid */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 2rem;
+  row-gap: 3.5rem;
 }
 
-.read-more-btn:hover svg {
-  transform: translateX(4px);
+@media (max-width: 1200px) {
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-/* Side Column */
-.side-news-column {
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Gov.uz 1:1 News Card */
+.news-card_news__qjYn_ {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  position: relative;
+  width: 100%;
 }
 
-.side-news-card {
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 12px;
-  display: flex;
-  gap: 14px;
-  transition: all var(--transition-fast);
-}
-
-.side-news-card:hover {
-  border-color: var(--color-primary-light);
-  transform: translateX(4px);
-  box-shadow: var(--shadow-md);
-}
-
-.side-image-link {
-  width: 120px;
-  height: 90px;
-  border-radius: var(--radius-sm);
+.news-card_news__img__odWx_ {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 17.5rem;
   overflow: hidden;
-  flex-shrink: 0;
-  background-color: #e2e8f0;
+  background-color: #f1f3f5;
+  border-radius: 2px;
 }
 
-.side-image {
+.news-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-normal);
+  transition: transform 0.3s ease;
 }
 
-.side-news-card:hover .side-image {
-  transform: scale(1.08);
+.news-card_news__qjYn_:hover .news-card-img {
+  transform: scale(1.03);
 }
 
-.side-content {
+/* Overlapping White Box */
+.news-card_news__content__sqBXx {
+  position: relative;
+  width: calc(100% - 2.5rem);
+  margin-top: -3.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  padding: 1.25rem 1.25rem;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  justify-content: space-between;
+  min-height: 11rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
 }
 
-.meta-tag {
-  color: var(--color-primary);
-  font-weight: 600;
-  font-size: 0.72rem;
-  text-transform: uppercase;
+.news-main-body {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
-.meta-bullet {
-  color: var(--color-gray-400);
+.news-card_news__date__hlyaP {
+  flex-basis: 3.5rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #e9ecef;
+  padding-right: 0.75rem;
+  text-align: center;
 }
 
-.meta-date {
-  font-size: 0.75rem;
-  color: var(--color-gray-400);
-}
-
-.side-title {
-  font-size: 0.95rem;
+.month-short {
+  font-size: 0.6875rem;
   font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.day-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #495057;
+  line-height: 1.2;
+}
+
+.news-text-box {
+  flex: 1;
+  min-width: 0;
+}
+
+.news-card_news__title__2kejC {
+  color: #222222;
+  font-size: 0.9375rem;
+  font-weight: 600;
   line-height: 1.35;
-  color: var(--color-gray-800);
-  margin-top: 4px;
+  margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  flex: 1;
+  transition: color 0.15s linear;
 }
 
-.side-title a:hover {
-  color: var(--color-primary);
+.news-card_news__title__2kejC a:hover {
+  color: var(--color-text-primary);
+  text-decoration: underline;
 }
 
-.side-footer {
-  margin-top: 8px;
-}
-
-.views-mini {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.75rem;
-  color: var(--color-gray-400);
-}
-
-/* Bottom News Row */
-.bottom-news-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 10px;
-  margin-bottom: 28px;
-}
-
-.grid-news-card {
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: all var(--transition-fast);
-}
-
-.grid-news-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.grid-image-link {
-  position: relative;
-  display: block;
-  height: 160px;
-  overflow: hidden;
-}
-
-.grid-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-normal);
-}
-
-.grid-news-card:hover .grid-image {
-  transform: scale(1.06);
-}
-
-.grid-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
-.grid-content {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.grid-title {
-  font-size: 0.92rem;
-  font-weight: 700;
-  line-height: 1.4;
-  color: var(--color-gray-800);
+.news-card_news__anons__O53sh {
+  font-size: 0.8125rem;
+  color: #707070;
+  line-height: 1.35;
+  margin-top: 0.5rem;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  flex: 1;
 }
 
-.grid-title a:hover {
-  color: var(--color-primary);
-}
-
-.news-bottom-actions {
+.news-card_news__footer__NnhqK {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f3f5;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@media (max-width: 1024px) {
-  .news-main-grid {
-    grid-template-columns: 1fr;
-  }
-  .bottom-news-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.footer-date {
+  font-size: 0.75rem;
+  color: #868e96;
 }
 
-@media (max-width: 640px) {
-  .lead-image-link {
-    height: 220px;
-  }
-  .bottom-news-row {
-    grid-template-columns: 1fr;
-  }
-  .side-news-card {
-    flex-direction: column;
-  }
-  .side-image-link {
-    width: 100%;
-    height: 150px;
-  }
+.news-card_news__type__1D3lj {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.news-card_news__type__1D3lj:hover {
+  text-decoration: underline;
+}
+
+.news-bottom-link {
+  margin-top: 2rem;
+  display: flex;
 }
 </style>

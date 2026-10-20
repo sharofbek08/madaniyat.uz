@@ -9,7 +9,7 @@ const props = defineProps({
 })
 
 const currentIndex = ref(0)
-const isAutoPlay = ref(true)
+const isPlaying = ref(true)
 let timer = null
 
 const next = () => {
@@ -23,8 +23,8 @@ const prev = () => {
 }
 
 const togglePlay = () => {
-  isAutoPlay.value = !isAutoPlay.value
-  if (isAutoPlay.value) {
+  isPlaying.value = !isPlaying.value
+  if (isPlaying.value) {
     startTimer()
   } else {
     stopTimer()
@@ -33,9 +33,7 @@ const togglePlay = () => {
 
 const startTimer = () => {
   stopTimer()
-  timer = setInterval(() => {
-    next()
-  }, 5000)
+  timer = setInterval(next, 5000)
 }
 
 const stopTimer = () => {
@@ -52,86 +50,69 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section v-if="banners && banners.length > 0" class="home-section banners-section">
+  <section v-if="banners && banners.length > 0" class="banners-section">
     <div class="container">
       <div 
-        class="banners-carousel-wrapper"
+        class="banners_carousel__F2HyJ"
         @mouseenter="stopTimer"
-        @mouseleave="isAutoPlay && startTimer()"
+        @mouseleave="isPlaying && startTimer()"
       >
-        <!-- Slide Items -->
-        <div class="slides-container">
-          <div 
-            v-for="(banner, idx) in banners" 
-            :key="banner.id"
-            class="slide-item"
-            :class="{ active: idx === currentIndex }"
-          >
-            <div class="banner-card">
-              <!-- Banner Image with overlay -->
-              <div class="banner-image-box">
-                <img :src="banner.image" :alt="banner.title" class="banner-img" />
-                <div class="banner-overlay"></div>
-              </div>
+        <!-- Prev Button -->
+        <button 
+          type="button" 
+          class="banners_carousel__prevBtn__8ygtM" 
+          aria-label="Oldingi banner"
+          @click="prev"
+        >
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18l-6-6 6-6" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
 
-              <!-- Banner Content -->
-              <div class="banner-content">
-                <span class="banner-badge badge badge-accent">{{ banner.badge || 'Muhim sana' }}</span>
-                <h3 class="banner-title">{{ banner.title }}</h3>
-                <p class="banner-subtitle">{{ banner.subtitle }}</p>
-                <div class="banner-actions">
-                  <a :href="banner.url || '#'" class="banner-btn">
-                    <span>Batafsil ma'lumot</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <line x1="5" y1="12" x2="19" y2="12"/>
-                      <polyline points="12 5 19 12 12 19"/>
-                    </svg>
-                  </a>
+        <!-- Carousel Viewport -->
+        <div class="carousel-viewport">
+          <div 
+            class="carousel-track" 
+            :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+          >
+            <div 
+              v-for="b in banners" 
+              :key="b.id" 
+              class="banners_carousel__item__txead"
+            >
+              <a :href="b.url || '#'" target="_blank" rel="noopener" class="banner-slide-link">
+                <img :src="b.image" :alt="b.title" class="banner-img" />
+                <div class="banner-slide-info">
+                  <span v-if="b.badge" class="banner-pill">{{ b.badge }}</span>
+                  <h4 class="banner-slide-title">{{ b.title }}</h4>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Carousel Controls -->
-        <div class="carousel-navigation-bar">
-          <!-- Indicators -->
-          <div class="indicators">
-            <button 
-              v-for="(_, idx) in banners" 
-              :key="idx" 
-              class="dot"
-              :class="{ active: idx === currentIndex }"
-              @click="currentIndex = idx"
-              :aria-label="`Slayd ${idx + 1}`"
-            />
-          </div>
+        <!-- Next Button -->
+        <button 
+          type="button" 
+          class="banners_carousel__nextBtn__jhNYR" 
+          aria-label="Keyingi banner"
+          @click="next"
+        >
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18l6-6-6-6" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
 
-          <!-- Buttons: Prev / Play / Next -->
-          <div class="nav-buttons">
-            <button class="nav-btn" @click="prev" aria-label="Oldingi slayd">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="15 18 9 12 15 6"/>
-              </svg>
-            </button>
-
-            <button class="nav-btn play-btn" @click="togglePlay" :title="isAutoPlay ? 'To‘xtatish' : 'Ijro etish'">
-              <svg v-if="isAutoPlay" viewBox="0 0 24 24" fill="currentColor">
-                <rect x="6" y="4" width="4" height="16"/>
-                <rect x="14" y="4" width="4" height="16"/>
-              </svg>
-              <svg v-else viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="5 3 19 12 5 21 5 3"/>
-              </svg>
-            </button>
-
-            <button class="nav-btn" @click="next" aria-label="Keyingi slayd">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9 18 15 12 9 6"/>
-              </svg>
-            </button>
-          </div>
-        </div>
+      <!-- Play / Pause control underneath -->
+      <div class="banners_play_and_stop__fVoTc" @click="togglePlay" :title="isPlaying ? 'To‘xtatish' : 'Davom ettirish'">
+        <svg v-if="isPlaying" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" color="var(--color-secondary)">
+          <rect x="6" y="4" width="4" height="16"/>
+          <rect x="14" y="4" width="4" height="16"/>
+        </svg>
+        <svg v-else width="16" height="16" viewBox="0 0 24 24" fill="currentColor" color="var(--color-secondary)">
+          <polygon points="5 3 19 12 5 21 5 3"/>
+        </svg>
       </div>
     </div>
   </section>
@@ -139,199 +120,152 @@ onUnmounted(() => {
 
 <style scoped>
 .banners-section {
-  padding-top: 10px;
-  padding-bottom: 24px;
+  padding-top: 1.25rem;
+  padding-bottom: 1.5rem;
 }
 
-.banners-carousel-wrapper {
+.banners_carousel__F2HyJ {
   position: relative;
-  border-radius: var(--radius-lg);
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.carousel-viewport {
   overflow: hidden;
-  box-shadow: var(--shadow-md);
-  background-color: var(--color-primary-dark);
+  width: 100%;
+  border-radius: 4px;
 }
 
-.slides-container {
-  position: relative;
-  min-height: 280px;
-}
-
-.slide-item {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-.slide-item.active {
-  position: relative;
-  opacity: 1;
-  visibility: visible;
-}
-
-.banner-card {
-  position: relative;
+.carousel-track {
   display: flex;
-  align-items: center;
-  min-height: 320px;
-  padding: 40px;
+  transition: transform 0.4s ease-in-out;
+  width: 100%;
 }
 
-.banner-image-box {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+.banners_carousel__item__txead {
+  position: relative;
+  min-width: 100%;
+  height: 150px;
+  outline: none;
+}
+
+.banner-slide-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 .banner-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  border-radius: 4px;
 }
 
-.banner-overlay {
+.banner-slide-info {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(1, 40, 96, 0.95) 0%, rgba(1, 61, 140, 0.8) 50%, rgba(1, 40, 96, 0.4) 100%);
-}
-
-.banner-content {
-  position: relative;
-  z-index: 2;
-  max-width: 650px;
+  background: linear-gradient(90deg, rgba(1, 61, 140, 0.85) 0%, rgba(1, 61, 140, 0.4) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem 2.5rem;
   color: #ffffff;
 }
 
-.banner-badge {
-  margin-bottom: 14px;
+.banner-pill {
+  display: inline-block;
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
 }
 
-.banner-title {
-  font-size: 2rem;
-  font-weight: 800;
-  line-height: 1.25;
-  color: #ffffff;
-  margin-bottom: 12px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.banner-subtitle {
-  font-size: 1.05rem;
-  color: #e2e8f0;
-  line-height: 1.5;
-  margin-bottom: 24px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.banner-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
-  color: #ffffff;
+.banner-slide-title {
+  font-size: 1.25rem;
   font-weight: 700;
-  font-size: 0.95rem;
-  padding: 12px 24px;
-  border-radius: var(--radius-full);
-  box-shadow: 0 4px 10px rgba(197, 160, 89, 0.4);
-  transition: all var(--transition-fast);
-}
-
-.banner-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(197, 160, 89, 0.6);
-}
-
-.banner-btn svg {
-  width: 18px;
-  height: 18px;
-  transition: transform var(--transition-fast);
-}
-
-.banner-btn:hover svg {
-  transform: translateX(4px);
-}
-
-/* Navigation Bar */
-.carousel-navigation-bar {
-  position: absolute;
-  bottom: 20px;
-  right: 28px;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(8px);
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.indicators {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: var(--radius-full);
-  background-color: rgba(255, 255, 255, 0.4);
-  transition: all var(--transition-fast);
-}
-
-.dot.active {
-  width: 24px;
-  background-color: var(--color-accent);
-}
-
-.nav-buttons {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.nav-btn {
-  width: 28px;
-  height: 28px;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
+  max-width: 32rem;
+  line-height: 1.3;
+}
+
+.banners_carousel__prevBtn__8ygtM,
+.banners_carousel__nextBtn__jhNYR {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background var(--transition-fast);
+  transition: all 0.2s ease;
+  z-index: 5;
 }
 
-.nav-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
+.banners_carousel__prevBtn__8ygtM {
+  left: 0;
 }
 
-.nav-btn svg {
-  width: 14px;
-  height: 14px;
+.banners_carousel__nextBtn__jhNYR {
+  right: 0;
+}
+
+.banners_carousel__prevBtn__8ygtM:hover,
+.banners_carousel__nextBtn__jhNYR:hover {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(1, 61, 140, 0.2);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.banners_carousel__prevBtn__8ygtM svg,
+.banners_carousel__nextBtn__jhNYR svg {
+  width: 22px;
+  height: 22px;
+}
+
+.banners_play_and_stop__fVoTc {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.banners_play_and_stop__fVoTc:hover {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
-  .banner-card {
-    padding: 24px;
-    min-height: 260px;
+  .banners_carousel__F2HyJ {
+    padding-left: 0;
+    padding-right: 0;
   }
-  .banner-title {
-    font-size: 1.4rem;
+  .banners_carousel__prevBtn__8ygtM,
+  .banners_carousel__nextBtn__jhNYR {
+    display: none;
   }
-  .banner-subtitle {
-    font-size: 0.9rem;
-    margin-bottom: 16px;
+  .banners_carousel__item__txead {
+    height: 120px;
   }
-  .carousel-navigation-bar {
-    position: static;
-    border-radius: 0;
-    justify-content: space-between;
+  .banner-slide-info {
+    padding: 1rem;
+  }
+  .banner-slide-title {
+    font-size: 1rem;
   }
 }
 </style>

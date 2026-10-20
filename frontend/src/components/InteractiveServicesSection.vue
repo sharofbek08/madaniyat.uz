@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from 'vue'
-
 const props = defineProps({
   services: {
     type: Array,
@@ -8,169 +6,187 @@ const props = defineProps({
   }
 })
 
-const selectedDate = ref(19)
-
 const events = [
   {
-    day: 19,
-    month: 'Oktabr',
+    day: '25',
+    month: 'Okt',
     time: '18:30',
     title: 'O‘zbekiston davlat akademik katta teatrida "Sevilya sartaroshi" operasi',
-    venue: 'Alisher Navoiy nomidagi GABT',
-    type: 'Teatr'
+    venue: 'Alisher Navoiy nomidagi GABT'
   },
   {
-    day: 22,
-    month: 'Oktabr',
+    day: '28',
+    month: 'Okt',
     time: '19:00',
-    title: "Xalqaro maqom san'ati ansamblining milliy konsert dasturi",
-    venue: "Turkiston san'at saroyi",
-    type: 'Konsert'
+    title: 'Xalqaro maqom san\'ati ansamblining tantanali konsert dasturi',
+    venue: 'Turkiston san\'at saroyi'
   },
   {
-    day: 25,
-    month: 'Oktabr',
+    day: '02',
+    month: 'Noy',
     time: '11:00',
-    title: 'Respublika qo‘g‘irchoq teatrida "Sehrli chiroq" ertak-spektakli',
-    venue: 'O‘zbek milliy qo‘g‘irchoq teatri',
-    type: 'Bolalar uchun'
+    title: 'Respublika qo‘g‘irchoq teatrida yangi spektakl premyerasi',
+    venue: 'O‘zbek milliy qo‘g‘irchoq teatri'
   },
   {
-    day: 28,
-    month: 'Oktabr',
+    day: '08',
+    month: 'Noy',
     time: '15:00',
-    title: '"O‘zbekiston xalq amaliy san\'ati durdonalari" ko‘rgazmasi ochilishi',
-    venue: 'O‘zbekiston Davlat san\'at muzeyi',
-    type: 'Ko‘rgazma'
+    title: '"O‘zbekiston xalq amaliy san\'ati durdonalari" ko‘rgazmasi',
+    venue: 'Davlat san\'at muzeyi'
+  }
+]
+
+const usefulLinks = [
+  {
+    id: 1,
+    title: 'O‘zbekiston Respublikasi ochiq ma’lumotlar portali',
+    url: 'https://data.egov.uz'
+  },
+  {
+    id: 2,
+    title: 'Yagona interaktiv davlat xizmatlari portali (my.gov.uz)',
+    url: 'https://my.gov.uz'
+  },
+  {
+    id: 3,
+    title: 'Normativ-huquqiy hujjatlar loyihalari portali',
+    url: 'https://regulation.gov.uz'
+  },
+  {
+    id: 4,
+    title: 'Yagona identifikatsiya tizimi (OneID)',
+    url: 'https://id.egov.uz'
   }
 ]
 </script>
 
 <template>
-  <section class="home-section interactive-section home-section-alt">
+  <section class="three-stack-section py-5">
     <div class="container">
-      <div class="interactive-grid">
-        <!-- Left: Interactive Services -->
-        <div class="services-column">
-          <div class="section-header-compact">
-            <div>
-              <h2 class="section-title">Interaktiv xizmatlar</h2>
-              <p class="section-subtitle">Aholi va yuridik shaxslar uchun onlayn davlat xizmatlari</p>
-            </div>
-            <a href="https://my.gov.uz" target="_blank" rel="noopener" class="see-all-btn">
-              <span>Barcha xizmatlar</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
+      <div class="three-stack_three-stack__UIHJu">
+        <!-- 1. Interaktiv xizmatlar (Col 1) -->
+        <div class="stack-col flex flex-col" data-bordered="1">
+          <div class="stack-header">
+            <h2 class="font--lg font-bold uppercase" style="color: var(--color-text-primary)">
+              Interaktiv xizmatlar
+            </h2>
+            <a href="https://my.gov.uz" target="_blank" rel="noopener" class="details-link_link__EkQDj">
+              Barcha xizmatlar
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12h10m0 0-4-4m4 4-4 4"/>
+                </svg>
+              </span>
             </a>
           </div>
 
-          <div class="services-list">
+          <!-- Services List -->
+          <div class="stack-list">
             <a 
-              v-for="srv in services" 
-              :key="srv.id" 
-              :href="srv.url" 
+              v-for="srv in services.slice(0, 4)" 
+              :key="srv.id"
+              :href="srv.url || '#'" 
               target="_blank" 
               rel="noopener"
-              class="service-item-card"
+              class="link-box_box__1w0YP"
             >
-              <div class="service-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="16" y1="13" x2="8" y2="13"/>
-                  <line x1="16" y1="17" x2="8" y2="17"/>
-                  <polyline points="10 9 9 9 8 9"/>
-                </svg>
+              <div class="link-box_line__LLu7H"></div>
+              <svg class="link-box_box__icon__B0zCB" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+              <div class="service-content">
+                <p class="service-title">{{ srv.title }}</p>
+                <span class="service-tag">{{ srv.category }}</span>
               </div>
-
-              <div class="service-details">
-                <div class="service-header-meta">
-                  <span class="service-cat-badge">{{ srv.category }}</span>
-                  <span v-if="srv.online" class="online-indicator">
-                    <span class="online-dot"></span> Onlayn
-                  </span>
-                </div>
-                <h3 class="service-item-title">{{ srv.title }}</h3>
-              </div>
-
-              <div class="service-link-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="7" y1="17" x2="17" y2="7"/>
-                  <polyline points="7 7 17 7 17 17"/>
-                </svg>
-              </div>
+              <svg class="external-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="7" y1="17" x2="17" y2="7"/>
+                <polyline points="7 7 17 7 17 17"/>
+              </svg>
             </a>
           </div>
         </div>
 
-        <!-- Right: Events Calendar -->
-        <div class="events-column">
-          <div class="section-header-compact">
-            <div>
-              <h2 class="section-title">Voqealar taqvimi</h2>
-              <p class="section-subtitle">Yurtimiz madaniy hayotidagi muhim tadbirlar</p>
-            </div>
-            <a href="#all-events" class="see-all-btn">
-              <span>Barcha voqealar</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
+        <!-- 2. Voqealar taqvimi (Col 2) -->
+        <div class="stack-col flex flex-col" data-bordered="2">
+          <div class="stack-header">
+            <h2 class="font--lg font-bold uppercase" style="color: var(--color-text-primary)">
+              Voqealar taqvimi
+            </h2>
+            <a href="#/madaniyat/news/events" class="details-link_link__EkQDj">
+              Barcha voqealar
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12h10m0 0-4-4m4 4-4 4"/>
+                </svg>
+              </span>
             </a>
           </div>
 
-          <!-- Calendar Mini Header / Month View -->
-          <div class="events-container-card">
-            <div class="calendar-month-header">
-              <span class="month-title">Oktabr, 2026</span>
-              <div class="days-strip">
-                <button 
-                  v-for="d in [18, 19, 20, 21, 22, 23, 24, 25]" 
-                  :key="d"
-                  class="day-chip"
-                  :class="{ active: selectedDate === d, today: d === 19 }"
-                  @click="selectedDate = d"
-                >
-                  <span class="day-num">{{ d }}</span>
-                </button>
+          <!-- Events List -->
+          <div class="stack-list">
+            <div 
+              v-for="(evt, idx) in events" 
+              :key="idx" 
+              class="event-card link-box_box__1w0YP"
+            >
+              <div class="event-date-block">
+                <span class="event-month">{{ evt.month }}</span>
+                <strong class="event-day">{{ evt.day }}</strong>
               </div>
-            </div>
-
-            <!-- Events List -->
-            <div class="upcoming-events-list">
-              <div v-for="(ev, idx) in events" :key="idx" class="event-card">
-                <div class="event-date-badge">
-                  <span class="event-day">{{ ev.day }}</span>
-                  <span class="event-month">{{ ev.month }}</span>
-                </div>
-
-                <div class="event-info">
-                  <div class="event-meta">
-                    <span class="event-time">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <polyline points="12 6 12 12 16 14"/>
-                      </svg>
-                      {{ ev.time }}
-                    </span>
-                    <span class="meta-bullet">•</span>
-                    <span class="event-type-badge">{{ ev.type }}</span>
-                  </div>
-
-                  <h3 class="event-title">{{ ev.title }}</h3>
-                  
-                  <div class="event-venue">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                      <circle cx="12" cy="10" r="3"/>
-                    </svg>
-                    <span>{{ ev.venue }}</span>
-                  </div>
+              <div class="event-content">
+                <p class="event-title">{{ evt.title }}</p>
+                <div class="event-footer-meta">
+                  <span class="event-time">⏰ {{ evt.time }}</span>
+                  <span class="event-venue">📍 {{ evt.venue }}</span>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- 3. Foydali havolalar (Col 3) -->
+        <div class="stack-col flex flex-col" data-bordered="3">
+          <div class="stack-header">
+            <h2 class="font--lg font-bold uppercase" style="color: var(--color-text-primary)">
+              Foydali havolalar
+            </h2>
+            <a href="#/madaniyat/usefullinks" class="details-link_link__EkQDj">
+              Barcha havolalar
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12h10m0 0-4-4m4 4-4 4"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <!-- Links List -->
+          <div class="stack-list">
+            <a 
+              v-for="link in usefulLinks" 
+              :key="link.id" 
+              :href="link.url" 
+              target="_blank" 
+              rel="noopener"
+              class="link-box_box__1w0YP"
+            >
+              <div class="link-box_line__LLu7H"></div>
+              <svg class="link-box_box__icon__B0zCB" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+              </svg>
+              <div class="service-content">
+                <p class="service-title">{{ link.title }}</p>
+              </div>
+              <svg class="external-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="7" y1="17" x2="17" y2="7"/>
+                <polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
@@ -179,300 +195,126 @@ const events = [
 </template>
 
 <style scoped>
-.interactive-section {
-  padding-top: 36px;
-  padding-bottom: 40px;
+.three-stack-section {
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
 }
 
-.interactive-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 32px;
-}
-
-.section-header-compact {
+.stack-col {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+}
+
+.stack-header {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
-  gap: 12px;
+  padding-bottom: 1.25rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
-/* Services Column */
-.services-list {
+.stack-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1rem;
 }
 
-.service-item-card {
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 14px 18px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  transition: all var(--transition-fast);
-}
-
-.service-item-card:hover {
-  transform: translateX(4px);
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-md);
-}
-
-.service-icon-box {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  background-color: var(--color-primary-50);
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: all var(--transition-fast);
-}
-
-.service-item-card:hover .service-icon-box {
-  background-color: var(--color-primary);
-  color: #ffffff;
-}
-
-.service-icon-box svg {
-  width: 22px;
-  height: 22px;
-}
-
-.service-details {
+.service-content {
   flex: 1;
+  min-width: 0;
 }
 
-.service-header-meta {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 4px;
-}
-
-.service-cat-badge {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--color-accent-dark);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.online-indicator {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.72rem;
+.service-title {
+  font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-success);
-}
-
-.online-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: var(--radius-full);
-  background-color: var(--color-success);
-  animation: pulseGlow 1.8s infinite;
-}
-
-.service-item-title {
-  font-size: 0.96rem;
-  font-weight: 600;
-  color: var(--color-gray-800);
+  color: #222222;
   line-height: 1.35;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.service-link-arrow {
-  color: var(--color-gray-400);
-  transition: all var(--transition-fast);
+.service-tag {
+  font-size: 0.6875rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 2px;
+  display: block;
 }
 
-.service-link-arrow svg {
-  width: 18px;
-  height: 18px;
+.external-arrow {
+  color: #adb5bd;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
 }
 
-.service-item-card:hover .service-link-arrow {
+.link-box_box__1w0YP:hover .external-arrow {
   color: var(--color-primary);
   transform: translate(2px, -2px);
 }
 
-/* Events Column */
-.events-container-card {
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-}
-
-.calendar-month-header {
-  background-color: var(--color-primary-50);
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.month-title {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--color-primary-dark);
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.days-strip {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-}
-
-.day-chip {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--color-gray-700);
-  transition: all var(--transition-fast);
-  flex-shrink: 0;
-}
-
-.day-chip:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-
-.day-chip.today {
-  border-color: var(--color-accent);
-}
-
-.day-chip.active {
-  background-color: var(--color-primary);
-  color: #ffffff;
-  border-color: var(--color-primary);
-}
-
-/* Upcoming Events List */
-.upcoming-events-list {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
+/* Event Card Specifics */
 .event-card {
   display: flex;
-  gap: 14px;
-  padding: 12px;
-  border-radius: var(--radius-md);
-  background-color: var(--color-gray-50);
-  border: 1px solid transparent;
-  transition: all var(--transition-fast);
+  align-items: center;
+  padding: 0.875rem 1rem;
+  gap: 1rem;
 }
 
-.event-card:hover {
-  background-color: #ffffff;
-  border-color: var(--color-primary-100);
-  box-shadow: var(--shadow-sm);
-}
-
-.event-date-badge {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-sm);
-  background-color: var(--color-primary);
-  color: #ffffff;
+.event-date-block {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 0.375rem 0.625rem;
+  border-radius: 4px;
+  min-width: 3.25rem;
   flex-shrink: 0;
-}
-
-.event-day {
-  font-size: 1.15rem;
-  font-weight: 800;
-  line-height: 1;
 }
 
 .event-month {
-  font-size: 0.65rem;
+  font-size: 0.625rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  opacity: 0.9;
+  line-height: 1;
 }
 
-.event-info {
+.event-day {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.event-content {
   flex: 1;
-}
-
-.event-meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.75rem;
-  color: var(--color-gray-500);
-  margin-bottom: 4px;
-}
-
-.event-time {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-weight: 600;
-  color: var(--color-gray-700);
-}
-
-.event-time svg,
-.event-venue svg {
-  width: 12px;
-  height: 12px;
-}
-
-.event-type-badge {
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  background: var(--color-primary-50);
-  padding: 2px 6px;
-  border-radius: 4px;
+  min-width: 0;
 }
 
 .event-title {
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--color-gray-900);
-  line-height: 1.35;
-  margin-bottom: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #222222;
+  line-height: 1.3;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.event-venue {
+.event-footer-meta {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 0.78rem;
-  color: var(--color-gray-500);
-}
-
-@media (max-width: 992px) {
-  .interactive-grid {
-    grid-template-columns: 1fr;
-  }
+  gap: 0.75rem;
+  margin-top: 4px;
+  font-size: 0.6875rem;
+  color: #6c757d;
+  flex-wrap: wrap;
 }
 </style>

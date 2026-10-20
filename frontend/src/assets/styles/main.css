@@ -1,61 +1,51 @@
 /* ==========================================================================
    O'zbekiston Respublikasi Madaniyat vazirligi - Rasmiy Vebsayti Dizayn Tizimi
+   Live gov.uz Theme & Design System Tokens
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
 :root {
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
+  --mantine-scale: 1;
+  --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mantine-font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mantine-font-family-headings: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
-  /* Color Palette - Uzbek Government Brand Navy & Gold */
+  /* Gov.uz Official Color Palette */
   --color-primary: #013d8c;
-  --color-primary-dark: #002860;
-  --color-primary-light: #0d5bbd;
-  --color-primary-50: #eef5fc;
-  --color-primary-100: #d8e8f8;
-  --color-primary-200: #b5d5f2;
+  --color-secondary: #707070;
+  --color-text-primary: #043b87;
+  --color-border: #e1e1e1;
+  --box-shadow: 0 3px 6px rgba(100, 100, 100, 0.2);
 
-  --color-accent: #c5a059;
-  --color-accent-light: #f5eedb;
-  --color-accent-dark: #9e7931;
+  --gap-sm: 0.5rem;
+  --gap: 1rem;
+  --gap-md: 2rem;
+  --gap-lg: 3rem;
+  --gap-xl: 4rem;
+  --gap-xxl: 8rem;
 
-  --color-success: #15803d;
-  --color-success-bg: #dcfce7;
-  --color-danger: #b91c1c;
-  --color-danger-bg: #fee2e2;
+  --font-xxsm: 0.625rem;
+  --font-xsm: 0.875rem;
+  --font-sm: 1rem;
+  --font: 1.125rem;
+  --font-md: 1.25rem;
+  --font-lg: 1.5rem;
+  --font-xlg: 1.875rem;
+  --font-xxlg: 2.25rem;
+  --font-xxxlg: 3rem;
 
-  --color-gray-50: #f8fafc;
-  --color-gray-100: #f1f5f9;
-  --color-gray-200: #e2e8f0;
-  --color-gray-300: #cbd5e1;
-  --color-gray-400: #94a3b8;
-  --color-gray-500: #64748b;
-  --color-gray-600: #475569;
-  --color-gray-700: #334155;
-  --color-gray-800: #1e293b;
-  --color-gray-900: #0f172a;
+  --radius-input: 5px;
+  --navbar-height: 110px;
+  --transition: all 0.2s linear;
+  --transition-slow: all 0.3s linear;
 
-  --bg-page: #f8fafc;
+  --bg-page: #ffffff;
   --bg-card: #ffffff;
-  --text-main: #1e293b;
-  --text-muted: #64748b;
-  --border-color: #e2e8f0;
+  --text-main: #222222;
+  --text-muted: #707070;
 
-  --container-max: 1320px;
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-full: 9999px;
-
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.25s ease;
-  --transition-slow: 0.35s ease;
-
-  /* Dynamic accessibility values */
+  --container-max: 100rem;
   --font-scale: 1;
 }
 
@@ -71,8 +61,8 @@ body.accessibility-contrast {
   --text-main: #ffff00 !important;
   --text-muted: #ffffff !important;
   --color-primary: #ffff00 !important;
-  --color-primary-dark: #ffff55 !important;
-  --border-color: #ffff00 !important;
+  --color-text-primary: #ffff00 !important;
+  --color-border: #ffff00 !important;
   color: #ffff00 !important;
   background-color: #000000 !important;
 }
@@ -81,7 +71,7 @@ body.accessibility-contrast * {
   border-color: #ffff00 !important;
 }
 
-/* Reset and Base */
+/* Base Styles */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -89,8 +79,8 @@ body.accessibility-contrast * {
 }
 
 html {
-  font-family: var(--font-family);
-  font-size: calc(15px * var(--font-scale));
+  font-family: var(--mantine-font-family);
+  font-size: calc(16px * var(--font-scale));
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
 }
@@ -98,7 +88,7 @@ html {
 body {
   background-color: var(--bg-page);
   color: var(--text-main);
-  line-height: 1.6;
+  line-height: 1.5;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -121,120 +111,221 @@ button {
   font-family: inherit;
 }
 
-/* Typography Helpers */
+/* Typography & Headings */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--mantine-font-family-headings);
   font-weight: 700;
-  line-height: 1.25;
   color: var(--text-main);
 }
 
-.section-title {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--color-primary-dark);
+.font--lg {
+  font-size: var(--font-lg);
+  line-height: 1.35;
+}
+
+.font--md {
+  font-size: var(--font-md);
+  line-height: 1.4;
+}
+
+.font--sm {
+  font-size: var(--font-sm);
+  line-height: 1.45;
+}
+
+.font--xsm {
+  font-size: var(--font-xsm);
+  line-height: 1.5;
+}
+
+/* Details Link (gov.uz standard 'Barcha...' link) */
+.details-link_link__EkQDj {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.section-title::before {
-  content: '';
-  display: inline-block;
-  width: 5px;
-  height: 28px;
-  background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
-  border-radius: 4px;
-}
-
-.section-subtitle {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  margin-top: 4px;
-}
-
-.section-header-row {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.see-all-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  gap: 4px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  transition: 0.15s linear;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.details-link_link__EkQDj:after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000000;
+  transition: 0.15s linear;
+}
+
+.details-link_link__EkQDj:hover:after {
+  width: 60%;
+}
+
+.details-link_link__EkQDj svg {
+  stroke: rgba(0, 0, 0, 0.6);
+  transition: 0.15s linear;
+  width: 20px;
+  height: 20px;
+}
+
+.details-link_link__EkQDj:hover {
+  color: #000000;
+  opacity: 1;
+}
+
+.details-link_link__EkQDj:hover svg {
+  stroke: #000000;
+  transform: translateX(3px);
+}
+
+/* Link Box Component (gov.uz signature interactive box) */
+.link-box_box__1w0YP {
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  transition: var(--transition);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  gap: 1rem;
+  text-decoration: none;
+  color: #222222;
+  position: relative;
+  border-radius: 2px;
+}
+
+.link-box_box__1w0YP:hover {
+  border-color: var(--color-primary);
+  color: var(--color-text-primary);
+  box-shadow: 0 4px 12px rgba(1, 61, 140, 0.08);
+}
+
+.link-box_line__LLu7H {
+  min-width: 3px;
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--color-primary);
+}
+
+.link-box_box__icon__B0zCB {
+  flex-shrink: 0;
+  color: var(--color-secondary);
+  width: 28px;
+  height: 28px;
+  transition: var(--transition);
+  opacity: 0.8;
+}
+
+.link-box_box__1w0YP:hover .link-box_box__icon__B0zCB {
   color: var(--color-primary);
-  background: var(--color-primary-50);
-  padding: 8px 16px;
-  border-radius: var(--radius-full);
-  transition: var(--transition-fast);
+  opacity: 1;
 }
 
-.see-all-btn:hover {
-  background: var(--color-primary);
-  color: #fff;
-  transform: translateX(4px);
+/* Three-Stack Grid with Vertical Dividers */
+.three-stack_three-stack__UIHJu {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
 }
 
-/* Layout Container */
+@media (max-width: 1200px) {
+  .three-stack_three-stack__UIHJu {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .three-stack_three-stack__UIHJu {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.three-stack_three-stack__UIHJu > div[data-bordered="1"] {
+  border-right: 1px solid var(--color-border);
+  padding-right: var(--gap-md);
+}
+
+.three-stack_three-stack__UIHJu > div[data-bordered="2"] {
+  padding-left: var(--gap-md);
+  padding-right: var(--gap-md);
+}
+
+.three-stack_three-stack__UIHJu > div[data-bordered="3"] {
+  border-left: 1px solid var(--color-border);
+  padding-left: var(--gap-md);
+}
+
+@media (max-width: 1200px) {
+  .three-stack_three-stack__UIHJu > div[data-bordered="1"],
+  .three-stack_three-stack__UIHJu > div[data-bordered="2"],
+  .three-stack_three-stack__UIHJu > div[data-bordered="3"] {
+    border-left: none;
+    border-right: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* Two-Stack (Documents & Polls) */
+.three-stack_three-stack__np7ES {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+}
+
+@media (max-width: 900px) {
+  .three-stack_three-stack__np7ES {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.three-stack_three-stack__np7ES > div[data-bordered="1"] {
+  border-right: 1px solid var(--color-border);
+  padding-right: var(--gap-lg);
+}
+
+.three-stack_three-stack__np7ES > div[data-bordered="2"] {
+  padding-left: var(--gap-lg);
+}
+
+@media (max-width: 900px) {
+  .three-stack_three-stack__np7ES > div[data-bordered="1"],
+  .three-stack_three-stack__np7ES > div[data-bordered="2"] {
+    border-right: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* Layout Containers */
 .container {
   width: 100%;
-  max-width: var(--container-max);
+  max-width: 100rem;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-/* Badge Styles */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.badge-primary {
-  background: var(--color-primary-50);
-  color: var(--color-primary);
-}
-
-.badge-accent {
-  background: var(--color-accent-light);
-  color: var(--color-accent-dark);
-}
-
-.badge-success {
-  background: var(--color-success-bg);
-  color: var(--color-success);
-}
-
-/* Section Wrapper */
-.home-section {
-  padding-top: 36px;
-  padding-bottom: 36px;
-}
-
-.home-section-alt {
-  background: #ffffff;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-/* Uzbek Geometric Pattern Overlay (Subtle) */
-.pattern-bg {
-  background-image: radial-gradient(rgba(1, 61, 140, 0.06) 1px, transparent 1px);
-  background-size: 20px 20px;
+@media (min-width: 1400px) {
+  .container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 /* Scrollbar */
@@ -244,47 +335,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #f1f3f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #ced4da;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-/* Animations */
-@keyframes pulseGlow {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.08); }
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 2s infinite ease-in-out;
-}
-
-/* Responsive tweaks */
-@media (max-width: 1024px) {
-  .section-title {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  .home-section {
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
+  background: #adb5bd;
 }
