@@ -13,11 +13,11 @@ import SubscribeBanner from './SubscribeBanner.vue'
 
 defineProps({
   runner: { type: Array, required: true },
-  news: { type: Object, required: true },
+  news: { type: [Array, Object], required: true },
   banners: { type: Array, required: true },
   activities: { type: Array, required: true },
   interactiveServices: { type: Array, required: true },
-  statistics: { type: Object, required: true },
+  statistics: { type: [Array, Object], required: true },
   vacanciesDocumentsPoll: { type: Object, required: true },
   projects: { type: Array, required: true },
   regionsMap: { type: Array, required: true },

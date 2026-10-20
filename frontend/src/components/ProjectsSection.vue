@@ -14,44 +14,31 @@ const props = defineProps({
         <h2 class="font--lg font-bold uppercase" style="color: var(--color-text-primary)">
           Amalga oshirilayotgan loyihalar
         </h2>
-        <a href="#/madaniyat/pages/about" class="details-link_link__EkQDj">
-          Barcha loyihalar
-          <span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12h10m0 0-4-4m4 4-4 4"/>
-            </svg>
-          </span>
-        </a>
       </div>
 
       <div class="projects-grid">
-        <div v-for="proj in projects" :key="proj.id" class="project-card">
-          <div class="project-card-top">
-            <span class="project-badge">{{ proj.badge }}</span>
-            <span class="project-status">{{ proj.status }}</span>
+        <a 
+          v-for="proj in projects" 
+          :key="proj.id" 
+          :href="proj.url || '#/madaniyat'" 
+          class="project-box-item"
+        >
+          <div class="project-emblem-wrap">
+            <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="#004094" stroke-width="1.8">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
           </div>
 
-          <h3 class="project-title">{{ proj.title }}</h3>
-          <p class="project-desc">{{ proj.desc }}</p>
-
-          <div class="project-card-footer">
-            <div class="participants-info">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              </svg>
-              <span>{{ proj.participants }}</span>
-            </div>
-
-            <span class="project-arrow-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </span>
+          <div class="project-content">
+            <span class="project-badge">{{ proj.badge || 'Respublika loyihasi' }}</span>
+            <h3 class="project-title">{{ proj.title }}</h3>
+            <p class="project-desc">{{ proj.desc }}</p>
           </div>
-        </div>
+
+          <svg class="project-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
@@ -59,123 +46,103 @@ const props = defineProps({
 
 <style scoped>
 .projects-section {
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   padding-bottom: 2.5rem;
 }
 
 .projects-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 1.5rem;
-  gap: 1rem;
-  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
-.project-card {
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-box-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
   background-color: #ffffff;
   border: 1px solid var(--color-border);
+  padding: 1.25rem 1.5rem;
   border-radius: 4px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
+  text-decoration: none;
   transition: var(--transition);
   position: relative;
 }
 
-.project-card:hover {
+.project-box-item:hover {
   border-color: var(--color-primary);
   box-shadow: 0 4px 16px rgba(1, 61, 140, 0.08);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
-.project-card-top {
+.project-emblem-wrap {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(0, 64, 148, 0.05);
+  border-radius: 4px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.project-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .project-badge {
+  display: inline-block;
   font-size: 0.6875rem;
   font-weight: 700;
-  text-transform: uppercase;
   color: var(--color-primary);
-  background: rgba(1, 61, 140, 0.08);
-  padding: 3px 8px;
-  border-radius: 4px;
-}
-
-.project-status {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #2b8a3e;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 0.25rem;
 }
 
 .project-title {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #222222;
   line-height: 1.35;
-  margin-bottom: 0.5rem;
+  margin: 0;
+  transition: color 0.15s ease;
+}
+
+.project-box-item:hover .project-title {
+  color: var(--color-text-primary);
 }
 
 .project-desc {
   font-size: 0.8125rem;
   color: #707070;
-  line-height: 1.45;
-  margin-bottom: 1.5rem;
-  flex: 1;
+  line-height: 1.4;
+  margin-top: 0.375rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.project-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid #f1f3f5;
-  padding-top: 1rem;
-}
-
-.participants-info {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #868e96;
-}
-
-.participants-info svg {
-  width: 14px;
-  height: 14px;
-  color: var(--color-primary);
-}
-
-.project-arrow-icon {
+.project-chevron {
   color: #adb5bd;
-  transition: all 0.2s ease;
+  flex-shrink: 0;
+  transition: all 0.2s;
 }
 
-.project-card:hover .project-arrow-icon {
+.project-box-item:hover .project-chevron {
   color: var(--color-primary);
-  transform: translateX(4px);
-}
-
-@media (max-width: 1200px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
+  transform: translateX(3px);
 }
 </style>

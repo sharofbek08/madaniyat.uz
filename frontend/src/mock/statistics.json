@@ -1,37 +1,32 @@
 [
   {
     "id": 1,
-    "value": 40,
-    "suffix": "+",
-    "label": "Davlat teatrlari",
-    "sub": "respublika va viloyat teatrlari"
+    "title": "40+",
+    "text": "Davlat teatrlari va sirk tashkilotlari",
+    "icon": "theatre"
   },
   {
     "id": 2,
-    "value": 825,
-    "suffix": "",
-    "label": "Madaniyat markazlari",
-    "sub": "barcha shahar va tumanlarda"
+    "title": "110+",
+    "text": "Tarixiy va san’at muzeylari",
+    "icon": "museum"
   },
   {
     "id": 3,
-    "value": 110,
-    "suffix": "+",
-    "label": "Muzeylar va galereyalar",
-    "sub": "noyob eksponatlar xazinasi"
+    "title": "825",
+    "text": "Aholi madaniyat markazlari",
+    "icon": "center"
   },
   {
     "id": 4,
-    "value": 330,
-    "suffix": "",
-    "label": "Musiqa va san'at maktablari",
-    "sub": "yosh iste'dodlar maskani"
+    "title": "330",
+    "text": "Bolalar musiqa va san'at maktablari",
+    "icon": "school"
   },
   {
     "id": 5,
-    "value": 15000,
-    "suffix": "+",
-    "label": "Yillik madaniy tadbirlar",
-    "sub": "kontsertlar, festivallar, ko‘rgazmalar"
+    "title": "8 200+",
+    "text": "Moddiy madaniy meros ko‘chmas mulk ob’yektlari",
+    "icon": "heritage"
   }
 ]

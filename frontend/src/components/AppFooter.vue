@@ -13,187 +13,154 @@ const props = defineProps({
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
+
+const footerLinks = [
+  { title: 'Vazirlik haqida', url: '#/madaniyat/pages/about' },
+  { title: 'Tashkilot tuzilmasi', url: '#/madaniyat/pages/structure' },
+  { title: 'Rahbariyat', url: '#/madaniyat/guides' },
+  { title: 'Markaziy apparat', url: '#/madaniyat/departments/staff' },
+  { title: 'Hududiy boshqarmalar', url: '#/madaniyat/departments/regional' },
+  { title: 'Bo‘sh ish o‘rinlari', url: '#/madaniyat/pages/bo-sh-ish-o-rinlari' },
+  { title: 'Tanlovlar va tenderlar', url: '#/madaniyat/news/e-lon' },
+  { title: 'Ekofaol xodim', url: '#/madaniyat/news/test' },
+  { title: 'Konstitutsiya sahifasi', url: '#/madaniyat/sections/konstitutsiya-sahifasi' },
+  { title: 'Korrupsiyaga qarshi kurashish', url: '#/madaniyat/sections/korrup-bo-lim' },
+  { title: 'Bog‘lanish', url: '#contacts' }
+]
 </script>
 
 <template>
   <footer id="contacts" class="app-footer">
-    <div class="footer-top-accent"></div>
-    <div class="container footer-container">
-      <!-- Main Footer Columns -->
-      <div class="footer-columns-grid">
-        <!-- 1. Ministry Brand & Contact -->
-        <div class="footer-col brand-col">
+    <div class="container">
+      <!-- 1. Top Real-time Visitors Statistics (Gov.uz official counter) -->
+      <div class="footer-counters-row">
+        <div class="counter-badge">
+          <span class="counter-label">Onlayn:</span>
+          <strong class="counter-val">14</strong>
+        </div>
+        <span class="counter-sep">•</span>
+        <div class="counter-badge">
+          <span class="counter-label">Amallar:</span>
+          <strong class="counter-val">82</strong>
+        </div>
+        <span class="counter-sep">•</span>
+        <div class="counter-badge">
+          <span class="counter-label">Tashriflar:</span>
+          <strong class="counter-val">2 418</strong>
+        </div>
+        <span class="counter-sep">•</span>
+        <div class="counter-badge">
+          <span class="counter-label">Veb-saytdagi o‘rtacha vaqt:</span>
+          <strong class="counter-val">04:12</strong>
+        </div>
+      </div>
+
+      <!-- 2. Footer Menu Links Row (Centered, Uppercase, Underline on hover) -->
+      <nav class="footer-menu-nav">
+        <a 
+          v-for="item in footerLinks" 
+          :key="item.title"
+          :href="item.url" 
+          class="footer-nav-link"
+        >
+          {{ item.title }}
+        </a>
+      </nav>
+
+      <!-- 3. Main 3-Column Footer Grid -->
+      <div class="footer-main-grid">
+        <!-- Col 1: Ministry Info -->
+        <div class="footer-col">
           <div class="footer-brand">
-            <img :src="siteInfo.logo" alt="Madaniyat vazirligi gerbi" class="footer-logo" />
+            <img src="/img/ministry_logo.png" alt="Madaniyat vazirligi gerbi" class="footer-logo" />
             <div>
-              <span class="footer-country">O‘zbekiston Respublikasi</span>
+              <span class="footer-country">O‘ZBEKISTON RESPUBLIKASI</span>
               <h3 class="footer-title">{{ siteInfo.title }}</h3>
             </div>
           </div>
-
-          <p class="footer-about-text">
-            O‘zbekiston Respublikasida madaniyat, teatr, musiqa, xalq ijodiyoti va madaniy merosni rivojlantirish sohasidagi davlat siyosatini amalga oshiruvchi vakolatli davlat organi.
+          <p class="footer-address">
+            <strong>Manzil:</strong> {{ siteInfo.address }}
           </p>
+          <p class="footer-email-row">
+            <strong>Elektron pochta:</strong> 
+            <a :href="`mailto:${siteInfo.email}`" class="footer-email-link">{{ siteInfo.email }}</a>
+          </p>
+          <p class="footer-hours">
+            <strong>Ish vaqti:</strong> {{ siteInfo.working_hours }}
+          </p>
+        </div>
 
-          <!-- Social Links -->
-          <div class="social-links-row">
+        <!-- Col 2: Social Media -->
+        <div class="footer-col footer-col-center">
+          <h4 class="col-title">Ijtimoiy tarmoqlar</h4>
+          <p class="social-desc">Vazirlikning rasmiy sahifalariga obuna bo‘ling va so‘nggi madaniy yangiliklardan xabardor bo‘ling:</p>
+          <div class="footer-social-row">
             <a 
               v-for="s in siteInfo.socials" 
               :key="s.name"
               :href="s.link" 
               target="_blank" 
               rel="noopener"
-              class="social-btn"
+              class="footer-social-btn"
               :title="s.name"
             >
-              <!-- Telegram -->
-              <svg v-if="s.name === 'Telegram'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="22" y1="2" x2="11" y2="13"/>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              <svg v-if="s.name === 'Telegram'" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.941z"/>
               </svg>
-              <!-- Facebook -->
-              <svg v-else-if="s.name === 'Facebook'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              <svg v-else-if="s.name === 'Facebook'" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
               </svg>
-              <!-- Instagram -->
-              <svg v-else-if="s.name === 'Instagram'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              <svg v-else-if="s.name === 'Instagram'" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
-              <!-- YouTube -->
-              <svg v-else-if="s.name === 'YouTube'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
-                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+              <svg v-else-if="s.name === 'YouTube'" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
-              <!-- X -->
-              <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4l16 16M4 20L20 4"/>
+              <svg v-else viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
           </div>
         </div>
 
-        <!-- 2. Contacts Info -->
-        <div class="footer-col contacts-col">
-          <h4 class="col-heading">Bog‘lanish</h4>
-          <ul class="contacts-list">
-            <li class="contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              <div>
-                <span class="label">Manzil:</span>
-                <span class="val">{{ siteInfo.address }}</span>
-              </div>
-            </li>
-
-            <li class="contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              <div>
-                <span class="label">Ishonch telefoni:</span>
-                <a :href="`tel:${siteInfo.helpline_value?.replace(/[^0-9+]/g, '')}`" class="val highlight">
-                  {{ siteInfo.helpline_value }}
-                </a>
-              </div>
-            </li>
-
-            <li class="contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-              <div>
-                <span class="label">Elektron pochta:</span>
-                <a :href="`mailto:${siteInfo.email}`" class="val highlight">{{ siteInfo.email }}</a>
-              </div>
-            </li>
-
-            <li class="contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              <div>
-                <span class="label">Ish vaqti:</span>
-                <span class="val">{{ siteInfo.working_hours }}</span>
-              </div>
-            </li>
-
-            <li class="contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-              </svg>
-              <div>
-                <span class="label">STIR (TIN):</span>
-                <span class="val">{{ siteInfo.tin }}</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <!-- 3. Navigation Links (Column 1) -->
-        <div class="footer-col links-col">
-          <h4 class="col-heading">Vazirlik haqida</h4>
-          <ul class="footer-links-list">
-            <li><a href="#madaniyat/pages/about">Vazirlik haqida</a></li>
-            <li><a href="#madaniyat/pages/structure">Tashkilot tuzilmasi</a></li>
-            <li><a href="#madaniyat/guides">Rahbariyat</a></li>
-            <li><a href="#madaniyat/departments/staff?active=1321">Markaziy apparat</a></li>
-            <li><a href="#madaniyat/departments/subordinate">Tizimdagi tashkilotlar</a></li>
-            <li><a href="#madaniyat/departments/regional">Hududiy boshqarmalar</a></li>
-            <li><a href="#madaniyat/pages/bo-sh-ish-o-rinlari">Bo‘sh ish o‘rinlari</a></li>
-          </ul>
-        </div>
-
-        <!-- 4. Navigation Links (Column 2) -->
-        <div class="footer-col links-col">
-          <h4 class="col-heading">Axborot xizmati</h4>
-          <ul class="footer-links-list">
-            <li><a href="#news">So‘nggi yangiliklar</a></li>
-            <li><a href="#events">Voqealar taqvimi</a></li>
-            <li><a href="#announcements">Rasmiy e'lonlar</a></li>
-            <li><a href="#press-release">Matbuot relizlari</a></li>
-            <li><a href="#photos">Fotogalereya</a></li>
-            <li><a href="#videos">Videogalereya</a></li>
-            <li><a href="#open-data">Ochiq ma'lumotlar</a></li>
-          </ul>
+        <!-- Col 3: Helpline & STIR -->
+        <div class="footer-col footer-col-right">
+          <h4 class="col-title">{{ siteInfo.helpline_title }}</h4>
+          <a :href="`tel:${siteInfo.helpline_value?.replace(/[^0-9+]/g, '')}`" class="footer-phone-big">
+            {{ siteInfo.helpline_value }}
+          </a>
+          <a href="#/madaniyat/pages/contacts" class="footer-all-contacts-btn">
+            {{ siteInfo.contact_title }}
+          </a>
+          <div class="footer-tin">
+            <span>STIR:</span> <strong>{{ siteInfo.tin }}</strong>
+          </div>
         </div>
       </div>
 
-      <!-- Mistake / Error text notice banner (Ctrl+Enter) -->
-      <div class="error-notice-card">
-        <div class="notice-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="8" x2="12" y2="12"/>
-            <line x1="12" y1="16" x2="12.01" y2="16"/>
-          </svg>
-        </div>
-        <p class="notice-text">
-          <strong>Diqqat!</strong> Agar siz matnda imlo yoki mazmuniy xatoliklarni aniqlasangiz, ma'muriyatni xabardor qilish uchun matnni belgilab, 
-          <kbd class="kbd-key">Ctrl</kbd> + <kbd class="kbd-key">Enter</kbd> tugmalarini bosing.
+      <!-- 4. Ctrl+Enter Mistake Notification Box -->
+      <div class="footer-mistake-notice">
+        <svg class="notice-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <p class="notice-p">
+          Diqqat! Agar siz matnda xatoliklarni aniqlasangiz, ularni belgilab, ma'muriyatni xabardor qilish uchun 
+          <kbd class="kbd-btn">Ctrl</kbd> + <kbd class="kbd-btn">Enter</kbd> tugmalarini bosing.
         </p>
       </div>
 
-      <!-- Footer Bottom Copyright & Meta -->
+      <!-- 5. Copyright & Bottom Row -->
       <div class="footer-bottom-bar">
-        <div class="copyright-text">
-          <p>© 2026 O‘zbekiston Respublikasi Madaniyat vazirligi. Barcha huquqlar himoyalangan.</p>
-          <p class="copy-sub">Ushbu vebsaytdagi ma'lumotlardan foydalanilganda rasmiy havola ko‘rsatilishi shart.</p>
-        </div>
-
+        <p class="copyright-p">
+          Barcha huquqlar himoyalangan. Ushbu veb-saytdagi ma’lumotlardan foydalanganda havola ko‘rsatilishi shart.
+        </p>
         <div class="footer-bottom-actions">
-          <span class="last-updated">Oxirgi yangilanish: {{ siteInfo.last_updated }}</span>
-
+          <span class="updated-time">Oxirgi yangilanish: {{ siteInfo.last_updated }}</span>
           <button class="scroll-top-btn" @click="scrollToTop" title="Yuqoriga qaytish">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="19" x2="12" y2="5"/>
-              <polyline points="5 12 12 5 19 12"/>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="18 15 12 9 6 15"/>
             </svg>
             <span>Yuqoriga</span>
           </button>
@@ -205,288 +172,284 @@ const scrollToTop = () => {
 
 <style scoped>
 .app-footer {
-  background-color: #0b192c;
-  color: #cbd5e1;
-  position: relative;
-  font-size: 0.9rem;
-  padding-top: 50px;
-  padding-bottom: 30px;
+  background-color: #0b1a30;
+  color: #d1d5db;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 3px solid var(--color-primary);
+  font-size: 0.875rem;
 }
 
-.footer-top-accent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-primary));
+/* Counters Row */
+.footer-counters-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
 }
 
-.footer-columns-grid {
+.counter-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  color: #94a3b8;
+}
+
+.counter-val {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.counter-sep {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation Links */
+.footer-menu-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+  row-gap: 0.75rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-nav-link {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  text-transform: uppercase;
+  transition: color 0.15s ease;
+  letter-spacing: 0.3px;
+}
+
+.footer-nav-link:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+/* Main Grid */
+.footer-main-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1.2fr 1fr 1fr;
-  gap: 36px;
-  margin-bottom: 40px;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-/* Brand Col */
+@media (max-width: 992px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 .footer-brand {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .footer-logo {
-  width: 58px;
-  height: 58px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
-  filter: brightness(1.1);
+  flex-shrink: 0;
 }
 
 .footer-country {
-  display: block;
-  font-size: 0.72rem;
-  color: var(--color-accent);
-  text-transform: uppercase;
+  font-size: 0.6875rem;
+  color: #94a3b8;
   letter-spacing: 0.5px;
+  display: block;
 }
 
 .footer-title {
-  font-size: 1.15rem;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 700;
   color: #ffffff;
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
-.footer-about-text {
-  font-size: 0.85rem;
+.footer-address,
+.footer-email-row,
+.footer-hours {
+  font-size: 0.8125rem;
+  color: #cbd5e1;
+  margin-bottom: 0.5rem;
+  line-height: 1.45;
+}
+
+.footer-email-link {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.footer-email-link:hover {
+  text-decoration: underline;
+}
+
+.col-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.social-desc {
+  font-size: 0.8125rem;
   color: #94a3b8;
-  line-height: 1.6;
-  margin-bottom: 22px;
+  margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
-.social-links-row {
+.footer-social-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.75rem;
 }
 
-.social-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-full);
-  background-color: rgba(255, 255, 255, 0.08);
+.footer-social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-fast);
+  transition: all 0.2s ease;
 }
 
-.social-btn:hover {
-  background-color: var(--color-accent);
-  color: #000000;
+.footer-social-btn:hover {
+  background-color: var(--color-primary);
   transform: translateY(-2px);
 }
 
-.social-btn svg {
-  width: 18px;
-  height: 18px;
-}
-
-/* Heading */
-.col-heading {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 20px;
-  position: relative;
-  padding-bottom: 8px;
-}
-
-.col-heading::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 32px;
-  height: 2px;
-  background-color: var(--color-accent);
-}
-
-/* Contacts */
-.contacts-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 0.85rem;
-}
-
-.contact-item svg {
-  width: 18px;
-  height: 18px;
-  color: var(--color-accent);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.contact-item .label {
+.footer-phone-big {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #38bdf8;
   display: block;
-  font-size: 0.72rem;
-  color: #64748b;
-  font-weight: 600;
-  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  text-decoration: none;
 }
 
-.contact-item .val {
-  color: #e2e8f0;
-  line-height: 1.4;
-}
-
-.contact-item .val.highlight {
-  color: var(--color-accent);
-  font-weight: 700;
-}
-
-.contact-item .val.highlight:hover {
+.footer-phone-big:hover {
   text-decoration: underline;
 }
 
-/* Links */
-.footer-links-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-links-list a {
-  color: #94a3b8;
-  font-size: 0.86rem;
-  transition: all var(--transition-fast);
+.footer-all-contacts-btn {
   display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  transition: background 0.2s;
 }
 
-.footer-links-list a:hover {
-  color: var(--color-accent);
-  transform: translateX(4px);
+.footer-all-contacts-btn:hover {
+  background-color: var(--color-primary);
 }
 
-/* Error Notice Card */
-.error-notice-card {
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-md);
-  padding: 16px 20px;
+.footer-tin {
+  font-size: 0.8125rem;
+  color: #94a3b8;
+}
+
+.footer-tin strong {
+  color: #ffffff;
+}
+
+/* Mistake Notice */
+.footer-mistake-notice {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 30px;
+  gap: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.875rem 1.25rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
 }
 
-.notice-icon {
-  color: var(--color-accent);
+.notice-svg {
+  color: #facc15;
   flex-shrink: 0;
 }
 
-.notice-icon svg {
-  width: 22px;
-  height: 22px;
+.notice-p {
+  font-size: 0.8125rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+  margin: 0;
 }
 
-.notice-text {
-  font-size: 0.85rem;
-  color: #94a3b8;
-  line-height: 1.5;
-}
-
-.kbd-key {
-  background-color: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
+.kbd-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 2px 6px;
+  border-radius: 3px;
   font-size: 0.75rem;
   color: #ffffff;
-  font-family: inherit;
 }
 
 /* Bottom Bar */
 .footer-bottom-bar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 24px;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 1rem;
 }
 
-.copyright-text p {
-  font-size: 0.82rem;
+.copyright-p {
+  font-size: 0.75rem;
   color: #94a3b8;
-}
-
-.copy-sub {
-  font-size: 0.75rem !important;
-  color: #64748b !important;
-  margin-top: 2px;
+  max-width: 40rem;
+  line-height: 1.4;
+  margin: 0;
 }
 
 .footer-bottom-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
-.last-updated {
+.updated-time {
   font-size: 0.75rem;
   color: #64748b;
 }
 
 .scroll-top-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 6px;
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-  padding: 8px 14px;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
+  gap: 4px;
+  font-size: 0.75rem;
   font-weight: 600;
-  transition: all var(--transition-fast);
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
 .scroll-top-btn:hover {
   background-color: var(--color-primary);
   transform: translateY(-2px);
-}
-
-.scroll-top-btn svg {
-  width: 14px;
-  height: 14px;
-}
-
-@media (max-width: 1024px) {
-  .footer-columns-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .footer-columns-grid {
-    grid-template-columns: 1fr;
-  }
-  .footer-bottom-bar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
 </style>

@@ -5,26 +5,80 @@ const props = defineProps({
     required: true
   }
 })
+
+// Statistics items matching official authority statistics
+const defaultStats = [
+  {
+    id: 1,
+    title: '40+',
+    text: 'Davlat teatrlari va sirk tashkilotlari',
+    icon: 'theatre'
+  },
+  {
+    id: 2,
+    title: '110+',
+    text: 'Tarixiy va san’at muzeylari',
+    icon: 'museum'
+  },
+  {
+    id: 3,
+    title: '825',
+    text: 'Aholi madaniyat markazlari',
+    icon: 'center'
+  },
+  {
+    id: 4,
+    title: '8 200+',
+    text: 'Moddiy madaniy meros ko‘chmas mulk ob’yektlari',
+    icon: 'heritage'
+  }
+]
 </script>
 
 <template>
-  <section class="home-section stats-section">
-    <div class="stats-bg-overlay"></div>
-    <div class="container stats-container">
-      <div class="stats-header">
-        <span class="stats-pretitle">Rasmiy ko‘rsatkichlar</span>
-        <h2 class="stats-main-title">O‘zbekiston Respublikasi madaniyat sohasi raqamlarda</h2>
-        <p class="stats-desc">Yurtimiz bo‘ylab faoliyat ko‘rsatayotgan madaniy-ma'rifiy muassasalar va yillik faoliyat natijalari</p>
-      </div>
-
+  <section class="authority-stats-section py-5">
+    <div class="container">
       <div class="stats-grid">
-        <div v-for="st in statistics" :key="st.id" class="stat-card">
-          <div class="stat-num-box">
-            <span class="stat-value">{{ st.value?.toLocaleString() }}</span>
-            <span class="stat-suffix">{{ st.suffix }}</span>
+        <div 
+          v-for="st in (statistics && statistics.length > 0 ? statistics : defaultStats)" 
+          :key="st.id" 
+          class="stat-card-outer"
+        >
+          <div class="stat-card-gradient-border">
+            <div class="stat-card-inner">
+              <div class="stat-card-content">
+                <div class="stat-icon-box">
+                  <!-- Theater Icon -->
+                  <svg v-if="st.icon === 'theatre' || st.id === 1" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#004094" stroke-width="2">
+                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    <circle cx="9" cy="9" r="1" fill="#004094"/>
+                    <circle cx="15" cy="9" r="1" fill="#004094"/>
+                    <path d="M8 15s1.5 2 4 2 4-2 4-2"/>
+                  </svg>
+                  <!-- Museum Icon -->
+                  <svg v-else-if="st.icon === 'museum' || st.id === 2" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#004094" stroke-width="2">
+                    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                    <line x1="9" y1="22" x2="9" y2="2"/>
+                    <line x1="15" y1="22" x2="15" y2="2"/>
+                    <line x1="4" y1="12" x2="20" y2="12"/>
+                  </svg>
+                  <!-- Center Icon -->
+                  <svg v-else-if="st.icon === 'center' || st.id === 3" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#004094" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg>
+                  <!-- Heritage Icon -->
+                  <svg v-else width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#004094" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                </div>
+
+                <div class="stat-text-box">
+                  <p class="stat-number">{{ st.title || st.value }}</p>
+                  <p class="stat-label">{{ st.text || st.label }}</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3 class="stat-label">{{ st.label }}</h3>
-          <p class="stat-sub">{{ st.sub }}</p>
         </div>
       </div>
     </div>
@@ -32,140 +86,97 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.stats-section {
-  position: relative;
-  background: radial-gradient(circle at 50% 30%, #012b63 0%, #00193d 100%);
-  color: #ffffff;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  overflow: hidden;
-}
-
-.stats-bg-overlay {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    radial-gradient(rgba(197, 160, 89, 0.15) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(1, 43, 99, 0.5), rgba(0, 25, 61, 0.95));
-  background-size: 24px 24px, 100% 100%;
-  pointer-events: none;
-}
-
-.stats-container {
-  position: relative;
-  z-index: 2;
-}
-
-.stats-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 48px;
-}
-
-.stats-pretitle {
-  display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--color-accent);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 8px;
-}
-
-.stats-main-title {
-  font-size: 2rem;
-  font-weight: 800;
-  line-height: 1.25;
-  color: #ffffff;
-  margin-bottom: 12px;
-}
-
-.stats-desc {
-  font-size: 0.95rem;
-  color: #94a3b8;
-  line-height: 1.5;
+.authority-stats-section {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
 }
 
-.stat-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border-radius: var(--radius-lg);
-  padding: 28px 20px;
-  text-align: center;
-  transition: all var(--transition-normal);
-}
-
-.stat-card:hover {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.09);
-  border-color: var(--color-accent);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 15px rgba(197, 160, 89, 0.2);
-}
-
-.stat-num-box {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  margin-bottom: 10px;
-  color: var(--color-accent);
-}
-
-.stat-value {
-  font-size: 2.6rem;
-  font-weight: 800;
-  line-height: 1;
-  font-family: var(--font-serif);
-  letter-spacing: -1px;
-}
-
-.stat-suffix {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-left: 2px;
-}
-
-.stat-label {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 6px;
-  line-height: 1.3;
-}
-
-.stat-sub {
-  font-size: 0.78rem;
-  color: #94a3b8;
-  line-height: 1.4;
-}
-
-@media (max-width: 1024px) {
-  .stats-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .stats-main-title {
-    font-size: 1.5rem;
-  }
-  .stat-value {
-    font-size: 2rem;
-  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .stats-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Gov.uz exact card styles from page-8e1d61a2e61cb617.js */
+.stat-card-outer {
+  width: 100%;
+  height: 100%;
+  box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.09);
+  border-radius: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card-outer:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 64, 148, 0.12);
+}
+
+.stat-card-gradient-border {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1px;
+  border-radius: 1rem;
+  background: linear-gradient(to right, #ffffff, #458be6);
+}
+
+.stat-card-inner {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  height: 100%;
+}
+
+.stat-card-content {
+  border-radius: 1rem;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(0, 64, 148, 0.05), rgba(255, 255, 255, 1));
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.stat-icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(0, 64, 148, 0.05);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.stat-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.stat-number {
+  color: #004094;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.stat-label {
+  color: #3d4646;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  margin-top: 4px;
 }
 </style>

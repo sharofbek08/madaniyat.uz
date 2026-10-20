@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 
 const props = defineProps({
   news: {
@@ -8,30 +8,40 @@ const props = defineProps({
   }
 })
 
-const activeCategory = ref('all')
-
-const categories = [
-  { id: 'all', label: 'Barchasi' },
-  { id: 'news', label: 'Yangiliklar' },
-  { id: 'tenders', label: 'Tanlovlar va tenderlar' },
-  { id: 'eco', label: 'Ekofaol xodim' },
-  { id: 'speeches', label: 'Nutqlar' },
-  { id: 'council', label: 'Jamoatchilik kengashi' }
+// Social links matching gov.uz SocialMediaLinks component in the news header
+const socials = [
+  {
+    name: 'X',
+    url: 'https://twitter.com/madaniyatuz',
+    icon: 'X'
+  },
+  {
+    name: 'Youtube',
+    url: 'https://youtube.com/@madaniyatvazirligirasmiy?si=74SawE1KuLPowou_',
+    icon: 'Youtube'
+  },
+  {
+    name: 'Facebook',
+    url: 'https://www.facebook.com/madaniyatvazirligiuz',
+    icon: 'Facebook'
+  },
+  {
+    name: 'Telegram',
+    url: 'https://t.me/s/madaniyatvazirligi',
+    icon: 'Telegram'
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/madaniyatvazirligi/',
+    icon: 'Instagram'
+  }
 ]
 
-const filteredNews = computed(() => {
-  if (activeCategory.value === 'all') return props.news
-  if (activeCategory.value === 'news') {
-    return props.news.filter(n => n.category_code === 'news' || n.category_title === 'Yangiliklar')
-  }
-  if (activeCategory.value === 'tenders') {
-    return props.news.filter(n => n.title?.toLowerCase().includes('tanlov') || n.title?.toLowerCase().includes('tender') || n.category_code === 'tenders')
-  }
-  if (activeCategory.value === 'eco') {
-    return props.news.filter(n => n.title?.toLowerCase().includes('eko') || n.category_code === 'eco')
-  }
-  return props.news
-})
+// The 2 featured lead cards on the left
+const leadCards = computed(() => props.news.slice(0, 2))
+
+// The 5 compact news items on the right column
+const rightListItems = computed(() => props.news.slice(2, 7))
 
 const getDay = (dateStr) => {
   if (!dateStr) return '20'
@@ -69,80 +79,143 @@ const formatDate = (dateStr) => {
 </script>
 
 <template>
-  <section class="section-news">
+  <section class="section-news pt-3 pb-5 3xl:pb-3" id="main-content">
     <div class="container">
-      <!-- Section Header with Category Filter Buttons -->
+      <!-- 1. Header: Left Title "Yangiliklar", Right SocialMediaLinks circles -->
       <div class="news-header-row">
         <h2 class="font--lg font-bold uppercase" style="color: var(--color-text-primary)">
           Yangiliklar
         </h2>
 
-        <!-- Category Pills -->
-        <div class="category-pills">
-          <button 
-            v-for="cat in categories" 
-            :key="cat.id"
-            class="cat-pill-btn"
-            :class="{ active: activeCategory === cat.id }"
-            @click="activeCategory = cat.id"
+        <!-- Circular Social Media Links Icons (Gov.uz signature SocialMediaLinks) -->
+        <div class="social-circles-row">
+          <a 
+            v-for="s in socials" 
+            :key="s.name"
+            :href="s.url"
+            target="_blank" 
+            rel="noopener"
+            class="social-circle-btn"
+            :title="s.name"
           >
-            {{ cat.label }}
-          </button>
+            <!-- X -->
+            <svg v-if="s.name === 'X'" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            <!-- Youtube -->
+            <svg v-else-if="s.name === 'Youtube'" viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            <!-- Facebook -->
+            <svg v-else-if="s.name === 'Facebook'" viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            <!-- Telegram -->
+            <svg v-else-if="s.name === 'Telegram'" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.941z"/>
+            </svg>
+            <!-- Instagram -->
+            <svg v-else viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
         </div>
       </div>
 
-      <!-- 3-Column News Grid (Gov.uz Mantine 3-stack) -->
-      <div class="news-grid">
-        <article 
-          v-for="item in filteredNews.slice(0, 6)" 
-          :key="item.id" 
-          class="news-card_news__qjYn_"
-        >
-          <!-- Image Container -->
-          <a :href="`#/madaniyat/news/${item.id}`" class="news-card_news__img__odWx_">
+      <!-- 2. Gov.uz Signature News Grid: 2 Big Cards + 1 Right Column with 5 compact items -->
+      <div class="news-layout-grid">
+        <!-- Lead Card 1 -->
+        <article v-if="leadCards[0]" class="news-card_news__qjYn_">
+          <a :href="`#/madaniyat/news/${leadCards[0].id}`" class="news-card_news__img__odWx_">
             <img 
-              :src="item.anons_image || '/img/ministry_logo.png'" 
-              :alt="item.title"
+              :src="leadCards[0].anons_image || '/img/ministry_logo.png'" 
+              :alt="leadCards[0].title"
               class="news-card-img"
               loading="lazy"
             />
           </a>
 
-          <!-- Signature Overlapping White Content Box -->
           <div class="news-card_news__content__sqBXx">
             <div class="news-main-body">
-              <!-- Left Date Box -->
               <div class="news-card_news__date__hlyaP">
-                <span class="month-short">{{ getMonthShort(item.date) }}</span>
-                <strong class="day-number">{{ getDay(item.date) }}</strong>
+                <span class="month-short">{{ getMonthShort(leadCards[0].date) }}</span>
+                <strong class="day-number">{{ getDay(leadCards[0].date) }}</strong>
               </div>
-
-              <!-- Right Text Box -->
               <div class="news-text-box">
                 <p class="news-card_news__title__2kejC">
-                  <a :href="`#/madaniyat/news/${item.id}`">{{ item.title }}</a>
+                  <a :href="`#/madaniyat/news/${leadCards[0].id}`">{{ leadCards[0].title }}</a>
                 </p>
-                <p v-if="item.anons" class="news-card_news__anons__O53sh">
-                  {{ item.anons }}
-                </p>
-                <p v-else class="news-card_news__anons__O53sh">
-                  {{ item.activity_title || 'O‘zbekiston Respublikasi Madaniyat vazirligi rasmiy axboroti' }}
+                <p class="news-card_news__anons__O53sh">
+                  {{ leadCards[0].anons || leadCards[0].activity_title || 'O‘zbekiston Respublikasi Madaniyat vazirligi rasmiy axboroti' }}
                 </p>
               </div>
             </div>
 
-            <!-- Card Footer -->
             <div class="news-card_news__footer__NnhqK">
-              <span class="footer-date">{{ formatDate(item.date) }}</span>
-              <a :href="`#/madaniyat/news/${item.id}`" class="news-card_news__type__1D3lj">
-                {{ item.category_title || 'Yangiliklar' }}
+              <span class="footer-date">{{ formatDate(leadCards[0].date) }}</span>
+              <a :href="`#/madaniyat/news/${leadCards[0].id}`" class="news-card_news__type__1D3lj">
+                {{ leadCards[0].category_title || 'Yangiliklar' }}
               </a>
             </div>
           </div>
         </article>
+
+        <!-- Lead Card 2 -->
+        <article v-if="leadCards[1]" class="news-card_news__qjYn_">
+          <a :href="`#/madaniyat/news/${leadCards[1].id}`" class="news-card_news__img__odWx_">
+            <img 
+              :src="leadCards[1].anons_image || '/img/ministry_logo.png'" 
+              :alt="leadCards[1].title"
+              class="news-card-img"
+              loading="lazy"
+            />
+          </a>
+
+          <div class="news-card_news__content__sqBXx">
+            <div class="news-main-body">
+              <div class="news-card_news__date__hlyaP">
+                <span class="month-short">{{ getMonthShort(leadCards[1].date) }}</span>
+                <strong class="day-number">{{ getDay(leadCards[1].date) }}</strong>
+              </div>
+              <div class="news-text-box">
+                <p class="news-card_news__title__2kejC">
+                  <a :href="`#/madaniyat/news/${leadCards[1].id}`">{{ leadCards[1].title }}</a>
+                </p>
+                <p class="news-card_news__anons__O53sh">
+                  {{ leadCards[1].anons || leadCards[1].activity_title || 'O‘zbekiston Respublikasi Madaniyat vazirligi rasmiy axboroti' }}
+                </p>
+              </div>
+            </div>
+
+            <div class="news-card_news__footer__NnhqK">
+              <span class="footer-date">{{ formatDate(leadCards[1].date) }}</span>
+              <a :href="`#/madaniyat/news/${leadCards[1].id}`" class="news-card_news__type__1D3lj">
+                {{ leadCards[1].category_title || 'Yangiliklar' }}
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Right Column: 5 Compact News List Items (Gov.uz signature) -->
+        <div class="compact-news-column">
+          <div 
+            v-for="item in rightListItems" 
+            :key="item.id" 
+            class="compact-news-item"
+          >
+            <div class="compact-news-meta">
+              <span class="compact-date">{{ formatDate(item.date) }}</span>
+              <span class="compact-dot">•</span>
+              <span class="compact-category">{{ item.category_title || 'Yangiliklar' }}</span>
+            </div>
+            <h4 class="compact-title">
+              <a :href="`#/madaniyat/news/${item.id}`">{{ item.title }}</a>
+            </h4>
+          </div>
+        </div>
       </div>
 
-      <!-- Bottom 'Barcha yangiliklar' link -->
+      <!-- 3. Bottom Centered 'Barcha yangiliklar' Link (gov.uz standard) -->
       <div class="news-bottom-link">
         <a href="#/madaniyat/news/news" class="details-link_link__EkQDj">
           Barcha yangiliklar
@@ -160,7 +233,7 @@ const formatDate = (dateStr) => {
 <style scoped>
 .section-news {
   padding-top: 1.5rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 2rem;
 }
 
 .news-header-row {
@@ -168,62 +241,62 @@ const formatDate = (dateStr) => {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
   flex-wrap: wrap;
 }
 
-.category-pills {
+/* Social Media Circles */
+.social-circles-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  gap: 0.625rem;
 }
 
-.cat-pill-btn {
-  padding: 0.375rem 1rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  border: 1px solid #ced4da;
-  background-color: transparent;
+.social-circle-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f1f3f5;
   color: #495057;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.2s ease;
-  white-space: nowrap;
+  text-decoration: none;
 }
 
-.cat-pill-btn:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-
-.cat-pill-btn.active {
+.social-circle-btn:hover {
   background-color: var(--color-primary);
-  border-color: var(--color-primary);
   color: #ffffff;
+  transform: translateY(-2px);
 }
 
-/* News Grid */
-.news-grid {
+/* Layout Grid: 3 columns (2 lead cards + 1 column of 5 compact items) */
+.news-layout-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: 2rem;
-  row-gap: 3.5rem;
+  gap: 2rem;
 }
 
 @media (max-width: 1200px) {
-  .news-grid {
+  .news-layout-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .compact-news-column {
+    grid-column: span 2;
   }
 }
 
 @media (max-width: 768px) {
-  .news-grid {
+  .news-layout-grid {
     grid-template-columns: 1fr;
+  }
+  .compact-news-column {
+    grid-column: span 1;
   }
 }
 
-/* Gov.uz 1:1 News Card */
+/* Lead Cards */
 .news-card_news__qjYn_ {
   display: flex;
   flex-direction: column;
@@ -252,7 +325,6 @@ const formatDate = (dateStr) => {
   transform: scale(1.03);
 }
 
-/* Overlapping White Box */
 .news-card_news__content__sqBXx {
   position: relative;
   width: calc(100% - 2.5rem);
@@ -363,8 +435,68 @@ const formatDate = (dateStr) => {
   text-decoration: underline;
 }
 
+/* Compact News Column (Right side, 5 items) */
+.compact-news-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  padding: 1.5rem 1.25rem;
+  border-radius: 2px;
+}
+
+.compact-news-item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.125rem;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.compact-news-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.compact-news-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #868e96;
+  margin-bottom: 0.375rem;
+}
+
+.compact-dot {
+  color: #ced4da;
+}
+
+.compact-category {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.compact-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #222222;
+  line-height: 1.35;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.compact-title a:hover {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+}
+
+/* Centered Bottom Link */
 .news-bottom-link {
   margin-top: 2rem;
   display: flex;
+  justify-content: center;
 }
 </style>
