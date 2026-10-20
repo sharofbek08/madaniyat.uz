@@ -29,6 +29,9 @@ import GuidesPage from './components/GuidesPage.vue'
 import StaffPage from './components/StaffPage.vue'
 import RegionalPage from './components/RegionalPage.vue'
 import VacanciesPage from './components/VacanciesPage.vue'
+import TendersPage from './components/TendersPage.vue'
+import EcoActivePage from './components/EcoActivePage.vue'
+import ConstitutionPage from './components/ConstitutionPage.vue'
 
 // Modals & Drawers
 import SearchModal from './components/SearchModal.vue'
@@ -70,6 +73,36 @@ const isVacanciesPage = computed(() => {
   )
 })
 
+const isTendersPage = computed(() => {
+  const h = currentHash.value.toLowerCase()
+  return (
+    h.includes('news/e-lon') ||
+    h.includes('e-lon') ||
+    h.includes('tanlovlar') ||
+    h.includes('tender') ||
+    h.includes('17063')
+  )
+})
+
+const isEcoActivePage = computed(() => {
+  const h = currentHash.value.toLowerCase()
+  return (
+    h.includes('news/test') ||
+    h.includes('ekofaol') ||
+    h.includes('13460')
+  )
+})
+
+const isConstitutionPage = computed(() => {
+  const h = currentHash.value.toLowerCase()
+  return (
+    h.includes('sections/konstitutsiya-sahifasi') ||
+    h.includes('konstitutsiya-sahifasi') ||
+    h.includes('konstitutsiya') ||
+    h.includes('3825')
+  )
+})
+
 const isAboutPage = computed(() => {
   const h = currentHash.value.toLowerCase()
   // Check about only if not matching any of the specific sub-pages
@@ -78,7 +111,10 @@ const isAboutPage = computed(() => {
     isGuidesPage.value ||
     isStaffPage.value ||
     isRegionalPage.value ||
-    isVacanciesPage.value
+    isVacanciesPage.value ||
+    isTendersPage.value ||
+    isEcoActivePage.value ||
+    isConstitutionPage.value
   ) {
     return false
   }
@@ -195,6 +231,24 @@ onUnmounted(() => {
       <!-- 1:1 About Ministry Page View -->
       <AboutPage 
         v-else-if="isAboutPage"
+        @navigate="navigateTo"
+      />
+
+      <!-- 1:1 Tenders / E-lon Page View -->
+      <TendersPage 
+        v-else-if="isTendersPage"
+        @navigate="navigateTo"
+      />
+
+      <!-- 1:1 Eco-Active / Test Page View -->
+      <EcoActivePage 
+        v-else-if="isEcoActivePage"
+        @navigate="navigateTo"
+      />
+
+      <!-- 1:1 Constitution Page View -->
+      <ConstitutionPage 
+        v-else-if="isConstitutionPage"
         @navigate="navigateTo"
       />
 

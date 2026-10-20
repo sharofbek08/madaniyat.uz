@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "id": 181188,
+      "category_id": 3785,
+      "date": "2026-06-05 16:55:00",
+      "title": "Yangi O‘zbekistonni — yashil makonga aylantiraylik!",
+      "anons": "Madaniyat vazirligi xodimlari \"Yashil makon\" umummilliy loyihasi doirasida faol ishtirok etib, atrof-muhitni muhofaza qilishga o‘z hissalarini qo‘shmoqda.",
+      "body": "<p style=\"text-align:justify\">\"Yashil makon\" umummilliy loyihasi yurtimiz bo‘ylab keng quloch yozmoqda. Mazkur tashabbus doirasida Madaniyat vazirligi hamda uning tasarrufidagi muassasalar xodimlari tomonidan ko‘chat ekish, yashil hududlarni kengaytirish va ekologik madaniyatni yuksaltirishga qaratilgan amaliy ishlar jadal olib borilmoqda.</p><p style=\"text-align:justify\">Vazirlik jamoasi atrof-muhit musaffoligini asrash har bir fuqaroning, ayniqsa madaniyat sohasi vakillarining burchi ekanligini ta’kidlab, barcha yurtdoshlarimizni yashil kelajak yaratishda faol bo‘lishga chaqiradi.</p>",
+      "views": 104,
+      "anons_image": "https://api-portal.gov.uz/uploads/19/2026/06/19/60807192-f9c8-e0de-7243-e07801bbc3a2_news_lang_.jpg",
+      "category_title": "Ekofaol xodim",
+      "activity_title": "Faoliyatga oid ma'lumotlar",
+      "activity_id": 426
+    },
+    {
+      "id": 181193,
+      "category_id": 3785,
+      "date": "2026-03-13 18:35:00",
+      "title": "Hashar – xalqimizning ezgu an’anasi",
+      "anons": "Navro‘z umumxalq bayrami arafasida yurtimizda an’anaviy umumxalq xayriya hashari yuqori uyushqoqlik bilan o‘tkazildi.",
+      "body": "<p style=\"text-align:justify\">Xalqimizning qadimiy va ezgu qadriyatlaridan biri bo‘lgan hashar doimo mehr-oqibat, o‘zaro birdamlik va hamjihatlik ramzi bo‘lib kelgan. Madaniyat vazirligi tizimidagi barcha tashkilot va muassasalarda umumxalq xayriya hashari ko‘tarinki kayfiyatda tashkil etildi.</p><p style=\"text-align:justify\">Tadbir davomida hududlar obodonlashtirilib, daraxtlar oqlandi, xiyobon va istirohat bog‘lari tartibga keltirildi. Mazkur tadbirlar madaniy maskanlarning yanada ko‘rkamlashishiga xizmat qilmoqda.</p>",
+      "views": 111,
+      "anons_image": "https://api-portal.gov.uz/uploads/19/2026/06/19/ab1c24a3-82c8-8cc3-3107-4e4140b0cec8_news_lang_.jpg",
+      "category_title": "Ekofaol xodim",
+      "activity_title": "Faoliyatga oid ma'lumotlar",
+      "activity_id": 426
+    },
+    {
+      "id": 60993,
+      "category_id": 3785,
+      "date": "2025-06-05 14:25:00",
+      "title": "Bizni shunday xodimlarimiz bor - vazirlikning ekofaol xodimi",
+      "anons": "Butunjahon atrof-muhitni muhofaza qilish kuni munosabati bilan Madaniyat vazirligining ekofaol xodimlari e’tirof etildi.",
+      "body": "<p style=\"text-align:justify\">Ekologik tozalik va tabiatni asrash har bir insonning kundalik turmush tarziga aylanishi zarur. Vazirlikda faoliyat yuritayotgan tashabbuskor va ekofaol xodimlar shaxsiy namunasi orqali jamiyatda ekologik ongni shakllantirishga munosib hissa qo‘shmoqda.</p><p style=\"text-align:justify\">Resurslarni tejash, qog‘oz va plastmassa chiqindilarini kamaytirish, elektr energiyasidan oqilona foydalanish borasidagi tashabbuslari uchun bir guruh faol xodimlar vazirlik rahbariyati tomonidan rag‘batlantirildi.</p>",
+      "views": 243,
+      "anons_image": "https://api-portal.gov.uz/uploads/19/2025/06/13/8044cd2f-ad1e-5756-fbf9-375703e2c654_news_lang_.jpg",
+      "category_title": "Ekofaol xodim",
+      "activity_title": "Faoliyatga oid ma'lumotlar",
+      "activity_id": 426
+    }
+  ],
+  "total_page": 1,
+  "current_page": 1,
+  "menu_id": 1123,
+  "menu_item_id": 13460,
+  "menu_item_title": "Ekofaol xodim",
+  "breadcrumb": "Faoliyat"
+}
