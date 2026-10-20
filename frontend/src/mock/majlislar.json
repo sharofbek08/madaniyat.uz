@@ -1,0 +1,61 @@
+{
+  "activity": {
+    "id": 431,
+    "age_limit": 16,
+    "code": "majlislar",
+    "title": "Majlislar",
+    "anons": "Madaniyat vazirligi tomonidan o‘tkaziladigan hay’at yig‘ilishlari, ishchi guruh majlislari va muhokamalar tafsilotlari.",
+    "body": "<p style='text-align:justify'>O‘zbekiston Respublikasi Madaniyat vazirligi faoliyatining ochiqligi va shaffofligini ta’minlash maqsadida vazirlik rahbariyati va hay’at a’zolari ishtirokida o‘tkaziladigan muhim majlislar, jamoatchilik muhokamalari va yig‘ilishlar haqidagi axborotlar muntazam e’lon qilib boriladi.</p>",
+    "updated_date": "2024-03-28 17:15:41",
+    "views": 4811,
+    "image": "",
+    "has_question": false
+  },
+  "news": [
+    {
+      "id": 233422,
+      "category_id": 148,
+      "category_code": "news",
+      "date": "2026-10-15 16:05:00",
+      "title": "Muqimiy teatrida “Xumoy” spektaklining jamoatchilik ko‘rigi va muhokamasi bo‘lib o‘tdi",
+      "anons": "Muqimiy teatrida “Xumoy” spektaklining jamoatchilik ko‘rigi va muhokamasi bo‘lib o‘tdi yuzasidan o‘tkazilgan majlis va muhokama tafsilotlari.",
+      "views": 144,
+      "anons_image": "https://api-portal.gov.uz/uploads/19/2026/10/15/dc0c4602-793a-4c10-41b8-e2b37fd5dae8_news_lang_.jpg",
+      "category_title": "Yangiliklar",
+      "activity_title": "majlislar",
+      "activity_id": 431,
+      "body": "<p style='text-align:justify'>Madaniyat vazirligi tashabbusi bilan <strong>«Muqimiy teatrida “Xumoy” spektaklining jamoatchilik ko‘rigi va muhokamasi bo‘lib o‘tdi»</strong> mavzusida navbatdagi ishchi yig‘ilishi bo‘lib o‘tdi.</p>\n<p style='text-align:justify'>Majlisda vazirlik mutasaddilari, soha vakillari hamda ijodiy jamoalar ishtirok etib, ko‘tarilgan masalalar yuzasidan atroflicha fikr almashdilar va tegishli qarorlar qabul qilindi.</p>\n<h4>Majlisda ko‘rib chiqilgan masalalar:</h4>\n<ul>\n  <li>Soha oldida turgan ustuvor vazifalar va ularning ijrosi;</li>\n  <li>Ijodiy jarayonlarni yangi bosqichga olib chiqish;</li>\n  <li>Ijro intizomi va jamoat nazoratini kuchaytirish.</li>\n</ul>"
+    },
+    {
+      "id": 232539,
+      "category_id": 148,
+      "category_code": "news",
+      "date": "2026-10-13 20:55:00",
+      "title": "Madaniyat vazirligida ijodiy birlashmalar faoliyati va kelgusidagi vazifalar muhokama qilindi",
+      "anons": "Madaniyat vazirligida ijodiy birlashmalar faoliyati va kelgusidagi vazifalar muhokama qilindi yuzasidan o‘tkazilgan majlis va muhokama tafsilotlari.",
+      "views": 317,
+      "anons_image": "https://api-portal.gov.uz/uploads/19/2026/10/13/db3e77bb-322a-e877-65a2-ed8660e83ee6_news_lang_.jpg",
+      "category_title": "Yangiliklar",
+      "activity_title": "majlislar",
+      "activity_id": 431,
+      "body": "<p style='text-align:justify'>Madaniyat vazirligi tashabbusi bilan <strong>«Madaniyat vazirligida ijodiy birlashmalar faoliyati va kelgusidagi vazifalar muhokama qilindi»</strong> mavzusida navbatdagi ishchi yig‘ilishi bo‘lib o‘tdi.</p>\n<p style='text-align:justify'>Majlisda vazirlik mutasaddilari, soha vakillari hamda ijodiy jamoalar ishtirok etib, ko‘tarilgan masalalar yuzasidan atroflicha fikr almashdilar va tegishli qarorlar qabul qilindi.</p>\n<h4>Majlisda ko‘rib chiqilgan masalalar:</h4>\n<ul>\n  <li>Soha oldida turgan ustuvor vazifalar va ularning ijrosi;</li>\n  <li>Ijodiy jarayonlarni yangi bosqichga olib chiqish;</li>\n  <li>Ijro intizomi va jamoat nazoratini kuchaytirish.</li>\n</ul>"
+    },
+    {
+      "id": 232101,
+      "category_id": 148,
+      "category_code": "news",
+      "date": "2026-10-13 13:35:00",
+      "title": "Samarqand viloyatidagi teatrlarga yangi direktorlar tayinlandi",
+      "anons": "Samarqand viloyatidagi teatrlarga yangi direktorlar tayinlandi yuzasidan o‘tkazilgan majlis va muhokama tafsilotlari.",
+      "views": 628,
+      "anons_image": "https://api-portal.gov.uz/uploads/19/2026/10/14/0a8bbc4d-e27a-0ba4-cffe-4327e6dc0d7f_news_lang_463103.jpg",
+      "category_title": "Yangiliklar",
+      "activity_title": "majlislar",
+      "activity_id": 431,
+      "body": "<p style='text-align:justify'>Madaniyat vazirligi tashabbusi bilan <strong>«Samarqand viloyatidagi teatrlarga yangi direktorlar tayinlandi»</strong> mavzusida navbatdagi ishchi yig‘ilishi bo‘lib o‘tdi.</p>\n<p style='text-align:justify'>Majlisda vazirlik mutasaddilari, soha vakillari hamda ijodiy jamoalar ishtirok etib, ko‘tarilgan masalalar yuzasidan atroflicha fikr almashdilar va tegishli qarorlar qabul qilindi.</p>\n<h4>Majlisda ko‘rib chiqilgan masalalar:</h4>\n<ul>\n  <li>Soha oldida turgan ustuvor vazifalar va ularning ijrosi;</li>\n  <li>Ijodiy jarayonlarni yangi bosqichga olib chiqish;</li>\n  <li>Ijro intizomi va jamoat nazoratini kuchaytirish.</li>\n</ul>"
+    }
+  ],
+  "menu_id": 1123,
+  "menu_item_id": 2971,
+  "breadcrumb": "Faoliyat"
+}

@@ -32,6 +32,9 @@ import VacanciesPage from './components/VacanciesPage.vue'
 import TendersPage from './components/TendersPage.vue'
 import EcoActivePage from './components/EcoActivePage.vue'
 import ConstitutionPage from './components/ConstitutionPage.vue'
+import CorruptionPage from './components/CorruptionPage.vue'
+import MeetingsPage from './components/MeetingsPage.vue'
+import ReportsPage from './components/ReportsPage.vue'
 
 // Modals & Drawers
 import SearchModal from './components/SearchModal.vue'
@@ -103,6 +106,34 @@ const isConstitutionPage = computed(() => {
   )
 })
 
+const isCorruptionPage = computed(() => {
+  const h = currentHash.value.toLowerCase()
+  return (
+    h.includes('sections/korrup-bo-lim') ||
+    h.includes('korrup-bo-lim') ||
+    h.includes('korrup') ||
+    h.includes('3433')
+  )
+})
+
+const isMeetingsPage = computed(() => {
+  const h = currentHash.value.toLowerCase()
+  return (
+    h.includes('activity_page/majlislar') ||
+    h.includes('majlislar') ||
+    h.includes('2971')
+  )
+})
+
+const isReportsPage = computed(() => {
+  const h = currentHash.value.toLowerCase()
+  return (
+    h.includes('activity_page/hisobotlar') ||
+    h.includes('hisobotlar') ||
+    h.includes('2966')
+  )
+})
+
 const isAboutPage = computed(() => {
   const h = currentHash.value.toLowerCase()
   // Check about only if not matching any of the specific sub-pages
@@ -114,7 +145,10 @@ const isAboutPage = computed(() => {
     isVacanciesPage.value ||
     isTendersPage.value ||
     isEcoActivePage.value ||
-    isConstitutionPage.value
+    isConstitutionPage.value ||
+    isCorruptionPage.value ||
+    isMeetingsPage.value ||
+    isReportsPage.value
   ) {
     return false
   }
@@ -249,6 +283,24 @@ onUnmounted(() => {
       <!-- 1:1 Constitution Page View -->
       <ConstitutionPage 
         v-else-if="isConstitutionPage"
+        @navigate="navigateTo"
+      />
+
+      <!-- 1:1 Anti-Corruption / Korrupsiyaga qarshi kurashish Page View -->
+      <CorruptionPage 
+        v-else-if="isCorruptionPage"
+        @navigate="navigateTo"
+      />
+
+      <!-- 1:1 Meetings / Majlislar Page View -->
+      <MeetingsPage 
+        v-else-if="isMeetingsPage"
+        @navigate="navigateTo"
+      />
+
+      <!-- 1:1 Reports / Hisobotlar Page View -->
+      <ReportsPage 
+        v-else-if="isReportsPage"
         @navigate="navigateTo"
       />
 
