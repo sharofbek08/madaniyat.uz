@@ -1,0 +1,329 @@
+{
+  "title": "Hududiy boshqarmalar",
+  "slug": "regional",
+  "updated_date": "2026-05-18 11:20:00",
+  "breadcrumbs": [
+    {
+      "title": "Bosh sahifa",
+      "url": "#/"
+    },
+    {
+      "title": "Vazirlik haqida",
+      "url": "#madaniyat/pages/about"
+    },
+    {
+      "title": "Hududiy boshqarmalar",
+      "url": ""
+    }
+  ],
+  "sidebar": [
+    {
+      "id": 1957,
+      "title": "Vazirlik haqida",
+      "url": "#madaniyat/pages/about",
+      "slug": "about",
+      "active": false
+    },
+    {
+      "id": 1958,
+      "title": "Tashkilot tuzilmasi",
+      "url": "#madaniyat/pages/structure",
+      "slug": "structure",
+      "active": false
+    },
+    {
+      "id": 1962,
+      "title": "Rahbariyat",
+      "url": "#madaniyat/guides",
+      "slug": "guides",
+      "active": false
+    },
+    {
+      "id": 1959,
+      "title": "Markaziy apparat",
+      "url": "#madaniyat/departments/staff",
+      "slug": "staff",
+      "active": false
+    },
+    {
+      "id": 1961,
+      "title": "Tizimdagi tashkilotlar",
+      "url": "#madaniyat/departments/subordinate",
+      "slug": "subordinate",
+      "active": false
+    },
+    {
+      "id": 1960,
+      "title": "Hududiy boshqarmalar",
+      "url": "#madaniyat/departments/regional",
+      "slug": "regional",
+      "active": true
+    },
+    {
+      "id": 2921,
+      "title": "Bo‘sh ish o‘rinlari",
+      "url": "#madaniyat/pages/bo-sh-ish-o-rinlari",
+      "slug": "vacancies",
+      "active": false
+    }
+  ],
+  "social_share": {
+    "facebook": "https://facebook.com/sharer/sharer.php?u=https://gov.uz/oz/madaniyat/departments/regional",
+    "twitter": "https://x.com/intent/tweet?url=https://gov.uz/oz/madaniyat/departments/regional",
+    "telegram": "https://t.me/share/url?url=https://gov.uz/oz/madaniyat/departments/regional"
+  },
+  "departments": [
+    {
+      "id": 573,
+      "region_code": "karakalpakstan",
+      "title": "Qoraqalpog‘iston Respublikasi Madaniyat vazirligi",
+      "leader": "Turdimuratov Begis Qaljanovich",
+      "position": "Qoraqalpog‘iston Respublikasi Madaniyat vaziri",
+      "address": "230100, Nukus shahri, Qoraqalpog‘iston ko‘chasi, 18-uy",
+      "phone": "+998 (61) 222-45-78",
+      "email": "qoraqalpogiston@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00 (Tushlik: 13:00 - 14:00)",
+      "reception_day": "Chorshanba: 10:00 - 12:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/0a123e3a-527a-bc4a-6d46-10e176bde3fa_guide_.jpg",
+      "stats": {
+        "centers": 68,
+        "theaters": 4,
+        "museums": 8
+      }
+    },
+    {
+      "id": 561,
+      "region_code": "andijan",
+      "title": "Andijon viloyati boshqarmasi",
+      "leader": "Qosimov Bobir Mahmudovich",
+      "position": "Andijon viloyati madaniyat boshqarmasi boshlig‘i",
+      "address": "170100, Andijon sh., Amir Temur shoh ko‘chasi, 31-uy",
+      "phone": "+998 (74) 225-78-90",
+      "email": "andijon@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00",
+      "reception_day": "Dushanba: 14:00 - 17:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/5f9343eb-3e6b-0b0b-9f11-0dc2d5ece88c_guide_.jpg",
+      "stats": {
+        "centers": 72,
+        "theaters": 2,
+        "museums": 5
+      }
+    },
+    {
+      "id": 562,
+      "region_code": "bukhara",
+      "title": "Buxoro viloyati boshqarmasi",
+      "leader": "Zokirov Bahodir Qodirovich",
+      "position": "Buxoro viloyati madaniyat boshqarmasi boshlig‘i",
+      "address": "200100, Buxoro sh., Ibrohim Mo‘minov ko‘chasi, 7-uy",
+      "phone": "+998 (65) 224-56-78",
+      "email": "buxoro@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00",
+      "reception_day": "Seshanba: 15:00 - 17:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/be4dba0d-f937-affd-b93c-2e3433ebf391_guide_.jpg",
+      "stats": {
+        "centers": 64,
+        "theaters": 2,
+        "museums": 12
+      }
+    },
+    {
+      "id": 563,
+      "region_code": "jizzakh",
+      "title": "Jizzax viloyati boshqarmasi",
+      "leader": "Mamatov Jamshid Ergashovich",
+      "position": "Jizzax viloyati madaniyat boshqarmasi boshlig‘i",
+      "address": "130100, Jizzax sh., Sh.Rashidov shoh ko‘chasi, 64-uy",
+      "phone": "+998 (72) 226-34-12",
+      "email": "jizzax@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00",
+      "reception_day": "Payshanba: 14:00 - 16:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/05/21/b1650e47-486d-6508-825b-f7ffbf5362a5_guide_931.jpg",
+      "stats": {
+        "centers": 46,
+        "theaters": 2,
+        "museums": 4
+      }
+    },
+    {
+      "id": 564,
+      "region_code": "qashqadaryo",
+      "title": "Qashqadaryo viloyati boshqarmasi",
+      "leader": "Xolmurodov Shuhrat Bekmurodovich",
+      "position": "Qashqadaryo viloyati madaniyat boshqarmasi boshlig‘i",
+      "address": "180100, Qarshi sh., Mustaqillik shoh ko‘chasi, 12-uy",
+      "phone": "+998 (75) 221-18-45",
+      "email": "qashqadaryo@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00",
+      "reception_day": "Juma: 10:00 - 13:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/eb1b0dff-5bad-b3fb-ddb3-41e079694ee0_guide_10448.jpeg",
+      "stats": {
+        "centers": 85,
+        "theaters": 2,
+        "museums": 6
+      }
+    },
+    {
+      "id": 565,
+      "region_code": "navoiy",
+      "title": "Navoiy viloyati boshqarmasi",
+      "leader": "Rahmatov Alisher Shokirovich",
+      "position": "Navoiy viloyati madaniyat boshqarmasi boshlig‘i",
+      "address": "210100, Navoiy sh., Xalqlar do‘stligi ko‘chasi, 42-uy",
+      "phone": "+998 (79) 223-89-01",
+      "email": "navoiy@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00",
+      "reception_day": "Chorshanba: 15:00 - 17:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/0a123e3a-527a-bc4a-6d46-10e176bde3fa_guide_.jpg",
+      "stats": {
+        "centers": 38,
+        "theaters": 1,
+        "museums": 4
+      }
+    },
+    {
+      "id": 566,
+      "region_code": "namangan",
+      "title": "Namangan viloyati boshqarmasi",
+      "leader": "Jo‘rayev Dilshod Anvarovich",
+      "position": "Namangan viloyati madaniyat boshqarmasi boshlig‘i",
+      "address": "160100, Namangan sh., Nodim Namangoniy ko‘chasi, 55-uy",
+      "phone": "+998 (69) 227-12-34",
+      "email": "namangan@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00",
+      "reception_day": "Dushanba: 15:00 - 17:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/5f9343eb-3e6b-0b0b-9f11-0dc2d5ece88c_guide_.jpg",
+      "stats": {
+        "centers": 66,
+        "theaters": 2,
+        "museums": 5
+      }
+    },
+    {
+      "id": 567,
+      "region_code": "samarkand",
+      "title": "Samarqand viloyati boshqarmasi",
+      "leader": "Mirzayev Rustam Hakimoivch",
+      "position": "Samarqand viloyati madaniyat boshqarmasi boshlig‘i",
+      "address": "140100, Samarqand sh., Registon ko‘chasi, 45-uy",
+      "phone": "+998 (66) 233-45-67",
+      "email": "samarqand@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00",
+      "reception_day": "Seshanba: 14:00 - 17:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/be4dba0d-f937-affd-b93c-2e3433ebf391_guide_.jpg",
+      "stats": {
+        "centers": 78,
+        "theaters": 3,
+        "museums": 14
+      }
+    },
+    {
+      "id": 568,
+      "region_code": "surxondaryo",
+      "title": "Surxondaryo viloyati boshqarmasi",
+      "leader": "Choriyev Ilhom Normurodovich",
+      "position": "Surxondaryo viloyati madaniyat boshqarmasi boshlig‘i",
+      "address": "190100, Termiz sh., At-Termiziy ko‘chasi, 19-uy",
+      "phone": "+998 (76) 224-11-22",
+      "email": "surxondaryo@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00",
+      "reception_day": "Payshanba: 10:00 - 12:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/05/21/b1650e47-486d-6508-825b-f7ffbf5362a5_guide_931.jpg",
+      "stats": {
+        "centers": 58,
+        "theaters": 2,
+        "museums": 7
+      }
+    },
+    {
+      "id": 569,
+      "region_code": "sirdaryo",
+      "title": "Sirdaryo viloyati boshqarmasi",
+      "leader": "Ahmedov Ulug‘bek Saidovich",
+      "position": "Sirdaryo viloyati madaniyat boshqarmasi boshlig‘i",
+      "address": "120100, Guliston sh., O‘zbekiston shoh ko‘chasi, 78-uy",
+      "phone": "+998 (67) 225-44-33",
+      "email": "sirdaryo@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00",
+      "reception_day": "Chorshanba: 14:00 - 16:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/eb1b0dff-5bad-b3fb-ddb3-41e079694ee0_guide_10448.jpeg",
+      "stats": {
+        "centers": 32,
+        "theaters": 1,
+        "museums": 3
+      }
+    },
+    {
+      "id": 571,
+      "region_code": "fergana",
+      "title": "Farg‘ona viloyati boshqarmasi",
+      "leader": "Olimov Akbarjon Yoqubovich",
+      "position": "Farg‘ona viloyati madaniyat boshqarmasi boshlig‘i",
+      "address": "150100, Farg‘ona sh., Al-Farg‘oniy ko‘chasi, 28-uy",
+      "phone": "+998 (73) 244-67-89",
+      "email": "fargona@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00",
+      "reception_day": "Juma: 14:00 - 17:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/0a123e3a-527a-bc4a-6d46-10e176bde3fa_guide_.jpg",
+      "stats": {
+        "centers": 94,
+        "theaters": 3,
+        "museums": 6
+      }
+    },
+    {
+      "id": 570,
+      "region_code": "tashkent_region",
+      "title": "Toshkent viloyati boshqarmasi",
+      "leader": "Ismoilov Shavkat Sobirovich",
+      "position": "Toshkent viloyati madaniyat boshqarmasi boshlig‘i",
+      "address": "111500, Nurafshon sh., Toshkent yo‘li ko‘chasi, 15-uy",
+      "phone": "+998 (70) 762-34-56",
+      "email": "toshvil@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00",
+      "reception_day": "Seshanba: 10:00 - 13:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/5f9343eb-3e6b-0b0b-9f11-0dc2d5ece88c_guide_.jpg",
+      "stats": {
+        "centers": 82,
+        "theaters": 2,
+        "museums": 7
+      }
+    },
+    {
+      "id": 572,
+      "region_code": "xorazm",
+      "title": "Xorazm viloyati boshqarmasi",
+      "leader": "Matyoqubov Azamat Ro‘zimboyevich",
+      "position": "Xorazm viloyati madaniyat boshqarmasi boshlig‘i",
+      "address": "220100, Urganch sh., Al-Xorazmiy ko‘chasi, 23-uy",
+      "phone": "+998 (62) 228-55-66",
+      "email": "xorazm@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00",
+      "reception_day": "Dushanba: 15:00 - 18:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/07/10/be4dba0d-f937-affd-b93c-2e3433ebf391_guide_.jpg",
+      "stats": {
+        "centers": 54,
+        "theaters": 2,
+        "museums": 8
+      }
+    },
+    {
+      "id": 574,
+      "region_code": "tashkent_city",
+      "title": "Toshkent shahar boshqarmasi",
+      "leader": "Rahmonov Dilmurod Ikromovich",
+      "position": "Toshkent shahar madaniyat boshqarmasi boshlig‘i",
+      "address": "100096, Toshkent sh., Chilonzor tumani, Bunyodkor shoh ko‘chasi, 2-uy",
+      "phone": "+998 (71) 277-12-34",
+      "email": "toshkent@madaniyat.uz",
+      "work_time": "Dushanba - Juma: 09:00 - 18:00",
+      "reception_day": "Payshanba: 14:00 - 17:00",
+      "image": "https://api-portal.gov.uz/uploads/19/2026/05/21/b1650e47-486d-6508-825b-f7ffbf5362a5_guide_931.jpg",
+      "stats": {
+        "centers": 24,
+        "theaters": 18,
+        "museums": 38
+      }
+    }
+  ]
+}

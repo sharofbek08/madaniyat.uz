@@ -1,0 +1,147 @@
+{
+  "id": 8111,
+  "slug": "bo-sh-ish-o-rinlari",
+  "category_title": "Sahifalar",
+  "title": "Bo‘sh ish o‘rinlari",
+  "age_limit": "0+",
+  "updated_date": "2025-03-26 10:42:56",
+  "views": 15318,
+  "breadcrumbs": [
+    {
+      "title": "Bosh sahifa",
+      "url": "#/"
+    },
+    {
+      "title": "Vazirlik haqida",
+      "url": "#madaniyat/pages/about"
+    },
+    {
+      "title": "Bo‘sh ish o‘rinlari",
+      "url": ""
+    }
+  ],
+  "sidebar": [
+    {
+      "id": 1957,
+      "title": "Vazirlik haqida",
+      "url": "#madaniyat/pages/about",
+      "slug": "about",
+      "active": false
+    },
+    {
+      "id": 1958,
+      "title": "Tashkilot tuzilmasi",
+      "url": "#madaniyat/pages/structure",
+      "slug": "structure",
+      "active": false
+    },
+    {
+      "id": 1962,
+      "title": "Rahbariyat",
+      "url": "#madaniyat/guides",
+      "slug": "guides",
+      "active": false
+    },
+    {
+      "id": 1959,
+      "title": "Markaziy apparat",
+      "url": "#madaniyat/departments/staff",
+      "slug": "staff",
+      "active": false
+    },
+    {
+      "id": 1961,
+      "title": "Tizimdagi tashkilotlar",
+      "url": "#madaniyat/departments/subordinate",
+      "slug": "subordinate",
+      "active": false
+    },
+    {
+      "id": 1960,
+      "title": "Hududiy boshqarmalar",
+      "url": "#madaniyat/departments/regional",
+      "slug": "regional",
+      "active": false
+    },
+    {
+      "id": 2921,
+      "title": "Bo‘sh ish o‘rinlari",
+      "url": "#madaniyat/pages/bo-sh-ish-o-rinlari",
+      "slug": "vacancies",
+      "active": true
+    }
+  ],
+  "social_share": {
+    "facebook": "https://facebook.com/sharer/sharer.php?u=https://gov.uz/oz/madaniyat/pages/bo-sh-ish-o-rinlari",
+    "twitter": "https://x.com/intent/tweet?url=https://gov.uz/oz/madaniyat/pages/bo-sh-ish-o-rinlari",
+    "telegram": "https://t.me/share/url?url=https://gov.uz/oz/madaniyat/pages/bo-sh-ish-o-rinlari"
+  },
+  "official_announcement_html": "<p>Hurmatli fuqaro!</p>\n\n\n\n<p>&nbsp;</p>\n\n\n\n<p>O&lsquo;zbekiston Respublikasi Prezidentining 2019-yil 3-oktabrdagi &ldquo;O&lsquo;zbekiston Respublikasida kadrlar siyosati va davlat fuqarolik xizmati tizimini tubdan takomillashtirish chora-tadbirlari to&lsquo;g&lsquo;risida&rdquo;gi PF-5843-sonli Farmoniga muvofiq, O&lsquo;zbekiston Respublikasi Madaniyat vazirligi tomonidan tasdiqlangan &ldquo;O&lsquo;zbekiston Respublikasi Madaniyat vazirligi markaziy apparati, hududiy bo&lsquo;linmalar, tizimdagi tashkilotlardagi vakant lavozimlarga ishga qabul qilish, xodimlarni boshqa lavozimga o&lsquo;tkazishda tanlov asosida saralab olish to&lsquo;g&lsquo;risida Tartib&rdquo;ga asosan vazirlik tizimidagi vakant lavozimlarga kadrlar Davlat fuqarolik xizmatchilari vakant lavozimlarining yagona ochiq portali (vacancy.argos.uz) orqali ochiq tanlov asosida ishga qabul qilinadi.</p>\n\n\n\n<p>&nbsp;</p>\n\n\n\n<p><a href=\"https://vacancy.argos.uz/hrm-vacancy-list?fatherOrganizationId=94\">Vazirlik tizimidagi vakant lavozimlarga o&lsquo;tish</a></p>",
+  "argos_url": "https://vacancy.argos.uz/hrm-vacancy-list?fatherOrganizationId=94",
+  "vacancies": [
+    {
+      "id": "vac-1",
+      "title": "Madaniy merosni asrash va monitoring qilish bo‘limi bosh mutaxassisi",
+      "department": "Madaniy meros boshqarmasi",
+      "salary": "6 500 000 - 8 000 000 so‘m",
+      "deadline": "2026-11-15",
+      "type": "Doimiy",
+      "experience": "Kamida 3 yil",
+      "education": "Oliy (Madaniyatshunoslik, Tarix, San'atshunoslik)",
+      "requirements": [
+        "Madaniy meros obyektlarini muhofaza qilish qonunchiligini bilish",
+        "Davlat tilida erkin va savodli yozish, rus va ingliz tillarini bilish ustunlik beradi",
+        "Zamonaviy axborot texnologiyalaridan yuqori darajada foydalana olish"
+      ],
+      "apply_url": "https://vacancy.argos.uz/hrm-vacancy-list?fatherOrganizationId=94"
+    },
+    {
+      "id": "vac-2",
+      "title": "Teatr va konsert-tomosha muassasalari faoliyatini muvofiqlashtirish bo‘limi yetakchi mutaxassisi",
+      "department": "Teatr va sirk san'atini rivojlantirish boshqarmasi",
+      "salary": "5 800 000 - 7 200 000 so‘m",
+      "deadline": "2026-11-20",
+      "type": "Doimiy",
+      "experience": "Kamida 2 yil",
+      "education": "Oliy (Teatrshunoslik, San'at menejmenti)",
+      "requirements": [
+        "Teatrlar faoliyati, repertuar siyosati va gastrol safarlarini rejalashtirish tajribasi",
+        "Ijodiy jamoalar bilan ishlash va jamoatchilik tadbirlarini tashkil etish qobiliyati",
+        "Normativ-huquqiy hujjatlar loyihalarini tayyorlash ko‘nikmasi"
+      ],
+      "apply_url": "https://vacancy.argos.uz/hrm-vacancy-list?fatherOrganizationId=94"
+    },
+    {
+      "id": "vac-3",
+      "title": "Axborot xizmati (matbuot kotibiyati) bosh mutaxassisi",
+      "department": "Axborot xizmati",
+      "salary": "6 000 000 - 7 500 000 so‘m",
+      "deadline": "2026-11-18",
+      "type": "Doimiy",
+      "experience": "Kamida 2 yil",
+      "education": "Oliy (Jurnalistika, Filologiya, PR)",
+      "requirements": [
+        "Press-relizlar, tahliliy maqolalar va intervyular tayyorlash malakasi",
+        "SMM, foto/video montaj va veb-sayt kontentini yuritish ko‘nikmalari",
+        "Kreativ fikrlash va OAV vakillari bilan samarali muloqot o‘rnatish"
+      ],
+      "apply_url": "https://vacancy.argos.uz/hrm-vacancy-list?fatherOrganizationId=94"
+    },
+    {
+      "id": "vac-4",
+      "title": "Xalqaro aloqalar va investitsiyalarni jalb qilish boshqarmasi mutaxassisi",
+      "department": "Xalqaro hamkorlik boshqarmasi",
+      "salary": "7 000 000 - 9 000 000 so‘m",
+      "deadline": "2026-11-25",
+      "type": "Doimiy",
+      "experience": "Kamida 2 yil",
+      "education": "Oliy (Xalqaro munosabatlar, Xalqaro iqtisod)",
+      "requirements": [
+        "Ingliz tilini mukammal darajada (IELTS kamida 7.0 yoki teng daraja) bilish",
+        "Xalqaro tashkilotlar (YUNESKO, TURKSOY, ISESCO) bilan ishlash qoidalari",
+        "Xalqaro shartnomalar va bitimlar loyihalarini ishlab chiqish tajribasi"
+      ],
+      "apply_url": "https://vacancy.argos.uz/hrm-vacancy-list?fatherOrganizationId=94"
+    }
+  ]
+}

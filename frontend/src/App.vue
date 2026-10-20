@@ -27,6 +27,8 @@ import AboutPage from './components/AboutPage.vue'
 import StructurePage from './components/StructurePage.vue'
 import GuidesPage from './components/GuidesPage.vue'
 import StaffPage from './components/StaffPage.vue'
+import RegionalPage from './components/RegionalPage.vue'
+import VacanciesPage from './components/VacanciesPage.vue'
 
 // Modals & Drawers
 import SearchModal from './components/SearchModal.vue'
@@ -53,10 +55,33 @@ const isStaffPage = computed(() => {
   return h.includes('staff') || h.includes('markaziy-apparat') || h.includes('1959')
 })
 
+const isRegionalPage = computed(() => {
+  const h = currentHash.value.toLowerCase()
+  return h.includes('regional') || h.includes('hududiy') || h.includes('1960')
+})
+
+const isVacanciesPage = computed(() => {
+  const h = currentHash.value.toLowerCase()
+  return (
+    h.includes('bo-sh-ish-o-rinlari') ||
+    h.includes('vacancies') ||
+    h.includes('vakansiyalar') ||
+    h.includes('2921')
+  )
+})
+
 const isAboutPage = computed(() => {
   const h = currentHash.value.toLowerCase()
-  // Check about only if not matching the other specific pages
-  if (isStructurePage.value || isGuidesPage.value || isStaffPage.value) return false
+  // Check about only if not matching any of the specific sub-pages
+  if (
+    isStructurePage.value ||
+    isGuidesPage.value ||
+    isStaffPage.value ||
+    isRegionalPage.value ||
+    isVacanciesPage.value
+  ) {
+    return false
+  }
   return (
     h.includes('about') ||
     h.includes('pages/about') ||
@@ -152,6 +177,18 @@ onUnmounted(() => {
       <!-- 1:1 Central Apparatus / Staff Page View -->
       <StaffPage 
         v-else-if="isStaffPage"
+        @navigate="navigateTo"
+      />
+
+      <!-- 1:1 Regional Departments Page View -->
+      <RegionalPage 
+        v-else-if="isRegionalPage"
+        @navigate="navigateTo"
+      />
+
+      <!-- 1:1 Vacancies / Bo'sh ish o'rinlari Page View -->
+      <VacanciesPage 
+        v-else-if="isVacanciesPage"
         @navigate="navigateTo"
       />
 

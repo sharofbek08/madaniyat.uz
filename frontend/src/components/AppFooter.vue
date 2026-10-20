@@ -144,9 +144,9 @@ const scrollToTop = () => {
             <li><a href="#madaniyat/pages/structure">Tashkilot tuzilmasi</a></li>
             <li><a href="#madaniyat/guides">Rahbariyat</a></li>
             <li><a href="#madaniyat/departments/staff?active=1321">Markaziy apparat</a></li>
-            <li><a href="#subordinate">Tizimdagi tashkilotlar</a></li>
-            <li><a href="#regional">Hududiy boshqarmalar</a></li>
-            <li><a href="#vacancies">Bo‘sh ish o‘rinlari</a></li>
+            <li><a href="#madaniyat/departments/subordinate">Tizimdagi tashkilotlar</a></li>
+            <li><a href="#madaniyat/departments/regional">Hududiy boshqarmalar</a></li>
+            <li><a href="#madaniyat/pages/bo-sh-ish-o-rinlari">Bo‘sh ish o‘rinlari</a></li>
           </ul>
         </div>
 
